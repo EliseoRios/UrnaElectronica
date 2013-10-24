@@ -1,4 +1,4 @@
 UrnaElectronica
 ===============
 
-Sistema desarrollado para la inplementación de procesos electorales.
+Sistema de votaciones desarrollado para uso general en procesos de elección.
