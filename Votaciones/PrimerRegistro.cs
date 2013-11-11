@@ -21,19 +21,20 @@ namespace Votaciones
 
         private void btnGuargar_Click(object sender, EventArgs e)
         {
+            Password password = new Password();
+            String ContraseñaEncriptada;
             String Nombre = txtNombre.Text;
-            String Telefono = txtTelefono.Text;
             String Direccion = txtDireccion.Text;
+            String Telefono = txtTelefono.Text;
             String Celular = txtCelular.Text;
             String Oficina = txtOficiona.Text;
+            String Ciudad = txtCiudad.Text;
             String CP = txtCP.Text;
             String Sexo = txtSexo.Text;
-            String Ciudad = txtCiudad.Text;
             String Contrasenia = txtContrasenia.Text;
             String Confirmacion = txtConfirmar.Text;
 
-
-            if (Nombre.Trim() == "" || Oficina.Trim() == "" || Direccion.Trim() == "" || Contrasenia.Trim() == "")
+            if (Nombre.Trim() == "" || Oficina.Trim() == "" || Direccion.Trim() == "" || Contrasenia.Trim() == "" || Confirmacion.Trim() == "")
             {
                 if (Nombre.Trim() == "")
                 {
@@ -47,16 +48,24 @@ namespace Votaciones
                 {
                     MessageBox.Show("Debe ingresar dirección", "Información..");
                 }
-                acciones.ClienteIncidentes(Nombre, Direccion, Telefono, Celular, Oficina, Ciudad, CP, Sexo);
+                else if (Contrasenia.Trim() == "" || Confirmacion.Trim() == "")
+                {
+                    MessageBox.Show("Verifique contraseña", "Información..");
+                }
             }
-            else
+            else if (Contrasenia.Trim() != Confirmacion.Trim())
             {
-
+                MessageBox.Show("Verifique contraseña", "Información..");
             }
-
-            if (Contrasenia.Trim() != Confirmacion.Trim() || Contrasenia.Trim() == "" || Confirmacion.Trim() == "")
+            else if(Contrasenia == Confirmacion)
             {
-               MessageBox.Show("Verifique contraseña","Contraseña..");
+                acciones.AlmacenarComoPrimero();
+                ContraseñaEncriptada = password.Encriptar(Contrasenia);
+                acciones.PrimerRegistro(Nombre.ToLower(), Direccion, Telefono, Celular, Oficina, Ciudad, CP, Sexo, ContraseñaEncriptada);
+                MessageBox.Show("No olvide su contraseña ya que es única", "Bienbenido Administrador");
+                FormBienvenida bienbenido = new FormBienvenida();
+                bienbenido.Show();
+                this.Hide();
             }
         }
     }

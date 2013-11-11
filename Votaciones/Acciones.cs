@@ -150,6 +150,40 @@ namespace Votaciones
             this.CerrarConexion();
         }
 
+        public void AlmacenarContraseña()
+        {
+        }
+
+        public bool VerificarContraseña(String Contraseña,String Nombre)
+        {
+            bool Verificacion = true;
+            String Sql="";
+            String LecturaId="";
+            String LecturaNombre ="";
+            this.AbrirConexion();
+            this.Inicializar();
+            Sql = "SELECT * FROM cliente WHERE contrasenia='"+Contraseña+"';";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            this.Leer = Comando.ExecuteReader();
+
+            while(Leer.Read())
+            {
+                LecturaId = Leer["id"].ToString();
+                LecturaNombre = Leer["nombre"].ToString();
+            }
+
+            if (LecturaId.Trim() == null || LecturaId.Trim() == "")
+            {
+                Verificacion = false;
+            }
+            else if (LecturaNombre != Nombre)
+            {
+                Verificacion = false;
+            }
+
+            return Verificacion;
+        }
+
         private void Inicializar()
         {
             this.Comando = null;

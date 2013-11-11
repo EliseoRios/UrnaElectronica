@@ -15,20 +15,34 @@ namespace Votaciones
         public FormInicio()
         {
             InitializeComponent();
-            //Ayuda a = new Ayuda();
-            //a.Show();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            Password password = new Password();
+            String Nombre = txtNombre.Text;
+            String Contraseña = txtContraseña.Text;
+            String ContraseñaEncriptada;
+            Boolean ValidarEntrada;
 
+            ContraseñaEncriptada = password.Encriptar(Contraseña);
+            ValidarEntrada = acciones.VerificarContraseña(ContraseñaEncriptada,Nombre.ToLower());
+
+            if (ValidarEntrada == true)
+            {
+                FormBienvenida bienbenido = new FormBienvenida();
+                bienbenido.Show();
+            }
+            else
+            {
+                MessageBox.Show("Verifique sus datos","Datos incorrectos..");
+            }
         }
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
             String nombre = "";
             acciones.ComprobarSiesPrimero();
-
             while (acciones.Leer.Read())
             {
                 nombre = acciones.Leer["numero"].ToString();
@@ -38,13 +52,8 @@ namespace Votaciones
             {
                 PrimerRegistro primerRegistro = new PrimerRegistro();
                 primerRegistro.Show();
-                acciones.AlmacenarComoPrimero();
-
-                //Close();
-                /*NuevoHilo = new System.Threading.Thread(new System.Threading.ThreadStart(RunPrincipal));
-                this.Close();
-                NuevoHilo.SetApartmentState(System.Threading.ApartmentState.STA);
-                NuevoHilo.Start();*/
+                MessageBox.Show("Los datos que introduzca serán utilizados para administrar el sistema\n\t\tPor seguridad: NO LOS OLVIDE","Bienbenido Administrador");
+                this.Visible = false;
             }
         }
     }
