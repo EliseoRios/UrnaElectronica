@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAyuda));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCliente = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAyudar = new System.Windows.Forms.Button();
@@ -40,17 +42,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.txtCliente);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -59,13 +60,32 @@
             this.panel1.Controls.Add(this.txtIncidencias);
             this.panel1.Location = new System.Drawing.Point(38, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 466);
+            this.panel1.Size = new System.Drawing.Size(613, 486);
             this.panel1.TabIndex = 0;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.AutoSize = true;
+            this.txtCliente.Location = new System.Drawing.Point(104, 436);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(35, 13);
+            this.txtCliente.TabIndex = 21;
+            this.txtCliente.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(232, -3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 21);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Soporte Técnico";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 78);
+            this.label4.Location = new System.Drawing.Point(53, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 5;
@@ -74,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 19);
+            this.label3.Location = new System.Drawing.Point(50, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
@@ -82,7 +102,7 @@
             // 
             // btnAyudar
             // 
-            this.btnAyudar.Location = new System.Drawing.Point(431, 426);
+            this.btnAyudar.Location = new System.Drawing.Point(431, 436);
             this.btnAyudar.Name = "btnAyudar";
             this.btnAyudar.Size = new System.Drawing.Size(75, 23);
             this.btnAyudar.TabIndex = 2;
@@ -92,7 +112,7 @@
             // 
             // txtSolucion
             // 
-            this.txtSolucion.Location = new System.Drawing.Point(107, 93);
+            this.txtSolucion.Location = new System.Drawing.Point(107, 103);
             this.txtSolucion.Name = "txtSolucion";
             this.txtSolucion.ReadOnly = true;
             this.txtSolucion.ShowSelectionMargin = true;
@@ -104,7 +124,7 @@
             // 
             this.txtIncidencias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtIncidencias.FormattingEnabled = true;
-            this.txtIncidencias.Location = new System.Drawing.Point(107, 35);
+            this.txtIncidencias.Location = new System.Drawing.Point(107, 45);
             this.txtIncidencias.Name = "txtIncidencias";
             this.txtIncidencias.Size = new System.Drawing.Size(399, 21);
             this.txtIncidencias.TabIndex = 0;
@@ -128,6 +148,7 @@
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Visitar Página Oficial";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -158,34 +179,12 @@
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(34, 640);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(42, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(232, -3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 21);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Soporte Técnico";
-            // 
             // FormAyuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(688, 687);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
@@ -200,7 +199,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +217,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtCliente;
     }
 }

@@ -14,6 +14,7 @@ namespace Votaciones
     {
         Acciones acciones = new Acciones();
         MySqlDataReader Leer;
+        public String nombre;
 
         public FormAyuda()
         {
@@ -30,13 +31,15 @@ namespace Votaciones
                 txtIncidencias.Items.Add(Leer["nombre"].ToString());
             }
             txtIncidencias.SelectedIndex = 1;
+
+            txtCliente.Text = nombre;
         }
 
         private void btnAyudar_Click(object sender, EventArgs e)
         {
             //Object Incidencia = txtIncidencias.SelectedItem;
             int NumeroInciso = txtIncidencias.SelectedIndex;
-            acciones.CantidadIncidencias(NumeroInciso);
+            acciones.CantidadIncidencias(NumeroInciso+1);
             acciones.TextoAyuda(NumeroInciso+1);
             
             while(acciones.Leer.Read())
@@ -45,8 +48,10 @@ namespace Votaciones
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
         }
     }
 }  

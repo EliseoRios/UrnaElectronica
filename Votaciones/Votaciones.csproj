@@ -87,17 +87,30 @@
     <Compile Include="FormCandidatos.Designer.cs">
       <DependentUpon>FormCandidatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerfil.Designer.cs">
+      <DependentUpon>FormPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtroProblema.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OtroProblema.Designer.cs">
       <DependentUpon>OtroProblema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs" />
     <Compile Include="PlanillaVotacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PlanillaVotacion.Designer.cs">
       <DependentUpon>PlanillaVotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimerRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimerRegistro.Designer.cs">
+      <DependentUpon>PrimerRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +119,12 @@
     </Compile>
     <Compile Include="FormVer.Designer.cs">
       <DependentUpon>FormVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioRegistrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioRegistrado.Designer.cs">
+      <DependentUpon>UsuarioRegistrado.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
@@ -125,11 +144,20 @@
     <EmbeddedResource Include="FormCandidatos.resx">
       <DependentUpon>FormCandidatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPerfil.resx">
+      <DependentUpon>FormPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtroProblema.resx">
       <DependentUpon>OtroProblema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanillaVotacion.resx">
       <DependentUpon>PlanillaVotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimerRegistro.es-MX.resx">
+      <DependentUpon>PrimerRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimerRegistro.resx">
+      <DependentUpon>PrimerRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,6 +170,9 @@
     </Compile>
     <EmbeddedResource Include="FormVer.resx">
       <DependentUpon>FormVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioRegistrado.resx">
+      <DependentUpon>UsuarioRegistrado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
