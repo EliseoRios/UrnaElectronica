@@ -11,6 +11,8 @@ namespace Votaciones
 {
     public partial class FormBienvenida : Form
     {
+        Acciones acciones = new Acciones();
+
         public FormBienvenida()
         {
             InitializeComponent();
@@ -26,6 +28,12 @@ namespace Votaciones
         {
             FormAdministrador forma3 = new FormAdministrador();
             forma3.Show();
+        }
+
+        private void btnVotante_Click(object sender, EventArgs e)
+        {
+            String Codigo = txtCodigo.Text;
+            Boolean acceso = acciones.IngresoCiudadano(Codigo);
         }
     }
 }

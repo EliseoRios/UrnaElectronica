@@ -189,5 +189,15 @@ namespace Votaciones
             this.Comando = null;
             this.Leer = null;
         }
+
+        public bool IngresoCiudadano(String Codigo)
+        {
+            Boolean acceso = true;
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "SELECT * FROM ciudadanos WHERE folio = "+Codigo+";";
+            this.Leer = Comando.ExecuteReader();
+            return acceso;
+        }
     }
 }

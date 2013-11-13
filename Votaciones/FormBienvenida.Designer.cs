@@ -101,6 +101,7 @@
             this.btnVotante.TabIndex = 10;
             this.btnVotante.Text = "Comenzar Voto";
             this.btnVotante.UseVisualStyleBackColor = true;
+            this.btnVotante.Click += new System.EventHandler(this.btnVotante_Click);
             // 
             // pictureBox1
             // 
