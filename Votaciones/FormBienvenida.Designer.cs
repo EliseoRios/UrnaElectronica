@@ -45,7 +45,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(181, 144);
+            this.txtCodigo.Location = new System.Drawing.Point(171, 144);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '*';
             this.txtCodigo.Size = new System.Drawing.Size(245, 20);
@@ -53,7 +53,7 @@
             // 
             // txtVotante
             // 
-            this.txtVotante.Location = new System.Drawing.Point(181, 118);
+            this.txtVotante.Location = new System.Drawing.Point(171, 118);
             this.txtVotante.Name = "txtVotante";
             this.txtVotante.Size = new System.Drawing.Size(245, 20);
             this.txtVotante.TabIndex = 7;
@@ -62,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(122, 145);
+            this.label2.Location = new System.Drawing.Point(112, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 6;
@@ -72,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 119);
+            this.label1.Location = new System.Drawing.Point(108, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 5;
@@ -82,7 +82,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(426, 440);
+            this.button1.Location = new System.Drawing.Point(415, 472);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 34);
             this.button1.TabIndex = 9;
@@ -95,7 +95,7 @@
             this.btnVotante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVotante.Image = ((System.Drawing.Image)(resources.GetObject("btnVotante.Image")));
             this.btnVotante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVotante.Location = new System.Drawing.Point(181, 181);
+            this.btnVotante.Location = new System.Drawing.Point(171, 181);
             this.btnVotante.Name = "btnVotante";
             this.btnVotante.Size = new System.Drawing.Size(203, 26);
             this.btnVotante.TabIndex = 10;
@@ -106,7 +106,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(390, 181);
+            this.pictureBox1.Location = new System.Drawing.Point(380, 181);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +128,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(115, 84);
+            this.label6.Location = new System.Drawing.Point(110, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(315, 18);
             this.label6.TabIndex = 20;
@@ -147,7 +147,7 @@
             "de un voto ordinario, por lo que, tu voto es completamente",
             "LIBRE, SECRETO e INALTERABLE para seguir así con la ",
             "democracia y respeto de todos."});
-            this.txtPlatica.Location = new System.Drawing.Point(139, 229);
+            this.txtPlatica.Location = new System.Drawing.Point(129, 229);
             this.txtPlatica.Name = "txtPlatica";
             this.txtPlatica.Size = new System.Drawing.Size(301, 104);
             this.txtPlatica.TabIndex = 21;
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 486);
+            this.ClientSize = new System.Drawing.Size(534, 518);
             this.Controls.Add(this.txtPlatica);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox2);

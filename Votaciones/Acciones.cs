@@ -193,11 +193,38 @@ namespace Votaciones
         public bool IngresoCiudadano(String Codigo)
         {
             Boolean acceso = true;
-            this.AbrirConexion();
+            /*this.AbrirConexion();
             this.Inicializar();
             String Sql = "SELECT * FROM ciudadanos WHERE folio = "+Codigo+";";
-            this.Leer = Comando.ExecuteReader();
+            this.Leer = Comando.ExecuteReader();*/
             return acceso;
+        }
+
+        public void GuardadCargo(String Cargo)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO cargos(nombre) VALUES ('"+Cargo+"');";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            Comando.ExecuteNonQuery();
+        }
+
+        public void GuardarFecha(String Fecha)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO periodo (Duracion) VALUES ('"+Fecha+"');";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            Comando.ExecuteNonQuery();
+        }
+
+        public void GuardarPartido(String Partido, Byte Logo, String NombreLogo)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO partidos (nombre,logo,nombre_logo) VALUES ('"+Partido+"','"+Logo+"','"+NombreLogo+"');";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            Comando.ExecuteNonQuery();
         }
     }
 }

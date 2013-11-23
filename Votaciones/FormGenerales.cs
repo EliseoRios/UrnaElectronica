@@ -18,18 +18,11 @@ namespace Votaciones
             //1350*725
         }
 
+        Acciones acciones = new Acciones();
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog Imagen = new OpenFileDialog();
-            Imagen.Filter = "Archivos de imagen|*.jpg;*.png;*gif;";
-            Imagen.InitialDirectory = "C:\\pictures";
-
-            if (Imagen.ShowDialog()==DialogResult.OK)
-            {
-                String Direccion = Imagen.FileName;
-                this.picLogo.ImageLocation = Direccion;
-                picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
+            OpenFileDialog BuscarImagen = new OpenFileDialog();
+            BuscarImagen.Filter = "Archivos de imagen|*.jpg|*.png|*.gif";
         }
 
         private void btnIngresoCandidatos_Click(object sender, EventArgs e)
@@ -64,6 +57,32 @@ namespace Votaciones
             FormVer VerTodos = new FormVer();
             VerTodos.MostrarNombre("TODOS LOS REGISTROS");
             VerTodos.Show();
+        }
+
+        private void btnCargo_Click(object sender, EventArgs e)
+        {
+            if (txtPartidos.Text.Trim() != null)
+            {
+                acciones.GuardadCargo(txtPartidos.Text);
+            }
+        }
+
+        private void btnFecha_Click(object sender, EventArgs e)
+        {
+            acciones.GuardarFecha(txtFecha.Text);
+        }
+
+        private void btnPartido_Click(object sender, EventArgs e)
+        {
+            String Partido = txtPartidos.Text;
+            Byte Logo;
+            String NombreLogo= "";
+            
+            if ( Partido.Trim() != null)
+            {
+                acciones.GuardarPartido(Partido,Logo,NombreLogo);
+            }
+
         }
     }
 }

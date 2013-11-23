@@ -258,7 +258,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuargar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPerfil";
             this.Text = "Perfil Cliente";
             this.panel1.ResumeLayout(false);
