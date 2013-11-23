@@ -218,13 +218,22 @@ namespace Votaciones
             Comando.ExecuteNonQuery();
         }
 
-        public void GuardarPartido(String Partido, Byte Logo, String NombreLogo)
+        public void GuardarPartido(String Partido, String Direccion)
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "INSERT INTO partidos (nombre,logo,nombre_logo) VALUES ('"+Partido+"','"+Logo+"','"+NombreLogo+"');";
+            String Sql = "INSERT INTO partidos (nombre,logo) VALUES ('"+Partido+"','"+Direccion+"');";
             this.Comando = new MySqlCommand(Sql, this.Con);
-            Comando.ExecuteNonQuery();
+            int exito = Comando.ExecuteNonQuery();
+            
+            if (exito == 1)
+            {
+                MessageBox.Show("Creado con exito","Guardado...");
+            }
+            else
+            {
+                MessageBox.Show("Fallo al guardar", "No guardo");
+            }
         }
     }
 }

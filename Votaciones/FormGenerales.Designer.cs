@@ -35,7 +35,7 @@
             this.btnPartido = new System.Windows.Forms.Button();
             this.txtPartidos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,12 +65,13 @@
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIngresoCandidatos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,9 +82,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.Location = new System.Drawing.Point(4, 12);
+            this.panel1.Location = new System.Drawing.Point(8, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1318, 598);
             this.panel1.TabIndex = 0;
@@ -99,7 +101,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnPartido);
             this.splitContainer1.Panel1.Controls.Add(this.txtPartidos);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.picLogo);
+            this.splitContainer1.Panel1.Controls.Add(this.pbLogo);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
@@ -145,14 +147,15 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Partidos";
             // 
-            // picLogo
+            // pbLogo
             // 
-            this.picLogo.Enabled = false;
-            this.picLogo.Location = new System.Drawing.Point(111, 290);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(219, 162);
-            this.picLogo.TabIndex = 20;
-            this.picLogo.TabStop = false;
+            this.pbLogo.Enabled = false;
+            this.pbLogo.Location = new System.Drawing.Point(111, 290);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(219, 162);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 20;
+            this.pbLogo.TabStop = false;
             // 
             // label6
             // 
@@ -388,7 +391,7 @@
             // 
             this.btnIngresoCandidatos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoCandidatos.Image")));
             this.btnIngresoCandidatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCandidatos.Location = new System.Drawing.Point(590, 625);
+            this.btnIngresoCandidatos.Location = new System.Drawing.Point(590, 630);
             this.btnIngresoCandidatos.Name = "btnIngresoCandidatos";
             this.btnIngresoCandidatos.Size = new System.Drawing.Size(155, 36);
             this.btnIngresoCandidatos.TabIndex = 8;
@@ -396,6 +399,15 @@
             this.toolTip1.SetToolTip(this.btnIngresoCandidatos, "Si no has terminado esta parte puedes tener problemas.\r\n");
             this.btnIngresoCandidatos.UseVisualStyleBackColor = true;
             this.btnIngresoCandidatos.Click += new System.EventHandler(this.btnIngresoCandidatos_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(844, 272);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label4";
             // 
             // FormGenerales
             // 
@@ -420,7 +432,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -461,9 +473,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnIngresoCandidatos;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnPartido;
         private System.Windows.Forms.TextBox txtPartidos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

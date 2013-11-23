@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
+using System.Drawing.Imaging;
+
 namespace Votaciones
 {
     public partial class FormGenerales : Form
@@ -19,10 +21,22 @@ namespace Votaciones
         }
 
         Acciones acciones = new Acciones();
+        String Direccion;
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog BuscarImagen = new OpenFileDialog();
             BuscarImagen.Filter = "Archivos de imagen|*.jpg|*.png|*.gif";
+
+            BuscarImagen.InitialDirectory = @"C:\\Documents\Images";
+
+            if(BuscarImagen.ShowDialog()==DialogResult.OK)
+            {
+                this.Direccion = BuscarImagen.FileName;
+                this.pbLogo.ImageLocation = this.Direccion;
+
+                Image imagen = new Bitmap(Direccion);
+            }
         }
 
         private void btnIngresoCandidatos_Click(object sender, EventArgs e)
@@ -59,6 +73,26 @@ namespace Votaciones
             VerTodos.Show();
         }
 
+        public byte[] ConvertirAByte(Image Imagen, ImageFormat FormatoImagen)
+        {
+            byte[] ImagenByte;
+
+            try
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Imagen.Save(ms, FormatoImagen);
+                    ImagenByte = ms.ToArray();
+                }
+            }
+            catch (Exception) 
+            { 
+                throw; 
+            }
+
+            return ImagenByte;
+        }
+
         private void btnCargo_Click(object sender, EventArgs e)
         {
             if (txtPartidos.Text.Trim() != null)
@@ -75,12 +109,16 @@ namespace Votaciones
         private void btnPartido_Click(object sender, EventArgs e)
         {
             String Partido = txtPartidos.Text;
-            Byte Logo;
-            String NombreLogo= "";
-            
-            if ( Partido.Trim() != null)
+
+            if (Partido.Trim() != "")
             {
-                acciones.GuardarPartido(Partido,Logo,NombreLogo);
+               
+               label4.Text = Direccion;
+               acciones.GuardarPartido(Partido, label4.Text);
+            }
+            else
+            {
+                MessageBox.Show("Agregue nombre del partido","No valido..");
             }
 
         }

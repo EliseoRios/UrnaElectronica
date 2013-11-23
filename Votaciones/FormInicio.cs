@@ -41,7 +41,7 @@ namespace Votaciones
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
-            UsuarioRegistrado ayuda = new UsuarioRegistrado();
+            FormGenerales ayuda = new FormGenerales();
             ayuda.Show();
             /*String nombre = "";
             acciones.ComprobarSiesPrimero();
