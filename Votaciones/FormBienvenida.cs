@@ -22,6 +22,7 @@ namespace Votaciones
         {
             FormAdministrador forma3 = new FormAdministrador();
             forma3.Show();
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

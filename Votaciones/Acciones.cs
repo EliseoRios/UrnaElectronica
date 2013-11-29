@@ -204,8 +204,9 @@ namespace Votaciones
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "INSERT INTO cargos(nombre) VALUES ('"+Cargo+"');";
+            String Sql = "INSERT INTO cargos (nombre) VALUES ('"+Cargo+"');";
             this.Comando = new MySqlCommand(Sql, this.Con);
+            MessageBox.Show("Cargo: " + Cargo,"Guargado..");
             Comando.ExecuteNonQuery();
         }
 
@@ -215,6 +216,7 @@ namespace Votaciones
             this.Inicializar();
             String Sql = "INSERT INTO periodo (Duracion) VALUES ('"+Fecha+"');";
             this.Comando = new MySqlCommand(Sql, this.Con);
+            MessageBox.Show("Fecha: " + Fecha, "Guardado..");
             Comando.ExecuteNonQuery();
         }
 
@@ -228,12 +230,46 @@ namespace Votaciones
             
             if (exito == 1)
             {
-                MessageBox.Show("Creado con exito","Guardado...");
+                MessageBox.Show("Partido: " + Partido, "Guardado..");
             }
             else
             {
                 MessageBox.Show("Fallo al guardar", "No guardo");
             }
+        }
+
+        public void GuardarCandidato(String Nombre, String Cargo, String Partido, String Descripcion)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO cardidatos (Nombre, Cargo, Partido, Descripcion) VALUES ('"+Nombre+"','"+Cargo+"','"+Partido+"','"+Descripcion+"')";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            MessageBox.Show("Candidato: "+Nombre ,"Guardado..");
+            this.Comando.ExecuteNonQuery();
+        }
+
+        public Hashtable MostrarRegistrosGenerales()
+        {
+            Hashtable HashRegistros = new Hashtable();
+
+            this.AbrirConexion();
+            this.Inicializar();
+
+            String SqlCargo = "";
+            this.Comando = new MySqlCommand(SqlCargo,Con);
+            this.Leer = this.Comando.ExecuteReader();
+
+            String SqlDuracion = "";
+            this.Comando = new MySqlCommand(SqlDuracion, this.Con);
+            this.Leer = this.Comando.ExecuteReader();
+
+            String SqlPartido = "";
+            this.Comando = new MySqlCommand(SqlPartido, this.Con);
+            this.Leer = this.Comando.ExecuteReader();
+
+            this.CerrarConexion();
+
+            return HashRegistros;
         }
     }
 }

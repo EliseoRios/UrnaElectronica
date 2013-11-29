@@ -32,18 +32,23 @@ namespace Votaciones
             {
                 FormBienvenida bienbenido = new FormBienvenida();
                 bienbenido.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Verifique sus datos","Datos incorrectos..");
+                txtContraseña.Text = "";
             }
         }
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
-            FormGenerales ayuda = new FormGenerales();
+            /*FormGenerales ayuda = new FormGenerales();
             ayuda.Show();
-            /*String nombre = "";
+            this.SetVisibleCore(false);
+            this.Hide();*/
+
+            String nombre = "";
             acciones.ComprobarSiesPrimero();
             while (acciones.Leer.Read())
             {
@@ -56,7 +61,7 @@ namespace Votaciones
                 primerRegistro.Show();
                 MessageBox.Show("Los datos que introduzca serán utilizados para administrar el sistema\n\t\tPor seguridad: NO LOS OLVIDE","Bienbenido Administrador");
                 this.Visible = false;
-            }*/
+            }
         }
     }
 }

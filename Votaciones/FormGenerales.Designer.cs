@@ -51,7 +51,6 @@
             this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.candidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargosYPartidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroCandidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.partidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +64,6 @@
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIngresoCandidatos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,12 +80,11 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.Location = new System.Drawing.Point(8, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1318, 598);
+            this.panel1.Size = new System.Drawing.Size(1335, 621);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -161,7 +158,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(106, 62);
+            this.label6.Location = new System.Drawing.Point(108, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(181, 18);
             this.label6.TabIndex = 19;
@@ -269,7 +266,7 @@
             this.menúToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1314, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -288,8 +285,7 @@
             // ingresarToolStripMenuItem
             // 
             this.ingresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.candidatosToolStripMenuItem,
-            this.cargosYPartidosToolStripMenuItem});
+            this.candidatosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
             this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
@@ -297,14 +293,9 @@
             // candidatosToolStripMenuItem
             // 
             this.candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
-            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.candidatosToolStripMenuItem.Text = "Candidatos";
-            // 
-            // cargosYPartidosToolStripMenuItem
-            // 
-            this.cargosYPartidosToolStripMenuItem.Name = "cargosYPartidosToolStripMenuItem";
-            this.cargosYPartidosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.cargosYPartidosToolStripMenuItem.Text = "Cargos y partidos";
+            this.candidatosToolStripMenuItem.Click += new System.EventHandler(this.candidatosToolStripMenuItem_Click);
             // 
             // verToolStripMenuItem
             // 
@@ -380,18 +371,20 @@
             this.menúAdministradorToolStripMenuItem.Name = "menúAdministradorToolStripMenuItem";
             this.menúAdministradorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.menúAdministradorToolStripMenuItem.Text = "Menú Administrador";
+            this.menúAdministradorToolStripMenuItem.Click += new System.EventHandler(this.menúAdministradorToolStripMenuItem_Click);
             // 
             // páginaPrincipalToolStripMenuItem
             // 
             this.páginaPrincipalToolStripMenuItem.Name = "páginaPrincipalToolStripMenuItem";
             this.páginaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.páginaPrincipalToolStripMenuItem.Text = "Página Principal";
+            this.páginaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.páginaPrincipalToolStripMenuItem_Click);
             // 
             // btnIngresoCandidatos
             // 
             this.btnIngresoCandidatos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoCandidatos.Image")));
             this.btnIngresoCandidatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCandidatos.Location = new System.Drawing.Point(590, 630);
+            this.btnIngresoCandidatos.Location = new System.Drawing.Point(611, 639);
             this.btnIngresoCandidatos.Name = "btnIngresoCandidatos";
             this.btnIngresoCandidatos.Size = new System.Drawing.Size(155, 36);
             this.btnIngresoCandidatos.TabIndex = 8;
@@ -400,22 +393,13 @@
             this.btnIngresoCandidatos.UseVisualStyleBackColor = true;
             this.btnIngresoCandidatos.Click += new System.EventHandler(this.btnIngresoCandidatos_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(844, 272);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
-            // 
             // FormGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1334, 687);
+            this.ClientSize = new System.Drawing.Size(1376, 710);
             this.Controls.Add(this.btnIngresoCandidatos);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -424,6 +408,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso Datos Generales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormGenerales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -468,15 +453,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem candidatosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargosYPartidosToolStripMenuItem;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnIngresoCandidatos;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnPartido;
         private System.Windows.Forms.TextBox txtPartidos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
     }
 }

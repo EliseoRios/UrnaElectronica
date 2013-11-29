@@ -20,6 +20,7 @@ namespace Votaciones
         {
             FormGenerales forma4 = new FormGenerales();
             forma4.Show();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -37,6 +38,14 @@ namespace Votaciones
             FormVer ver = new FormVer();
             ver.MostrarNombre("RESULTADOS LOCALES");
             ver.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormBienvenida bienbenida = new FormBienvenida();
+            bienbenida.Show();
+            this.Hide();
         }
     }
 }

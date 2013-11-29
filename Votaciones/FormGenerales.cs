@@ -9,11 +9,14 @@ using System.Windows.Forms;
 using System.IO;
 
 using System.Drawing.Imaging;
+using System.Collections;
 
 namespace Votaciones
 {
     public partial class FormGenerales : Form
     {
+        
+
         public FormGenerales()
         {
             InitializeComponent();
@@ -34,8 +37,6 @@ namespace Votaciones
             {
                 this.Direccion = BuscarImagen.FileName;
                 this.pbLogo.ImageLocation = this.Direccion;
-
-                Image imagen = new Bitmap(Direccion);
             }
         }
 
@@ -43,6 +44,7 @@ namespace Votaciones
         {
             FormCandidatos forma5 = new FormCandidatos();
             forma5.Show();
+            this.Close();
         }
 
         private void registroCandidatosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,15 +97,17 @@ namespace Votaciones
 
         private void btnCargo_Click(object sender, EventArgs e)
         {
-            if (txtPartidos.Text.Trim() != null)
+            if (txtCargos.Text.Trim() != "")
             {
-                acciones.GuardadCargo(txtPartidos.Text);
+                acciones.GuardadCargo(txtCargos.Text);
+                txtCargos.Text = "";
             }
         }
 
         private void btnFecha_Click(object sender, EventArgs e)
         {
             acciones.GuardarFecha(txtFecha.Text);
+            txtFecha.Text = "";
         }
 
         private void btnPartido_Click(object sender, EventArgs e)
@@ -112,15 +116,59 @@ namespace Votaciones
 
             if (Partido.Trim() != "")
             {
-               
-               label4.Text = Direccion;
-               acciones.GuardarPartido(Partido, label4.Text);
+                String letra = "";
+                String url = "";
+
+                for (int i = 0; i < Direccion.Length; i++ )
+                {
+                    letra = Direccion.Substring(i,1);
+
+                    if (letra == "\\")
+                    {
+                        url = url + letra + "\\";
+                    }
+                    else
+                    {
+                        url = url + letra;
+                    }
+                }
+                acciones.GuardarPartido(Partido, url);
+
+                txtPartidos.Text = "";
+                pbLogo.Image = null;
             }
             else
             {
                 MessageBox.Show("Agregue nombre del partido","No valido..");
             }
 
+        }
+
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCandidatos forma5 = new FormCandidatos();
+            forma5.Show();
+            this.Close();
+        }
+
+        private void menúAdministradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdministrador administrador = new FormAdministrador();
+            administrador.Show();
+            this.Close();
+        }
+
+        private void páginaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBienvenida bienvenida = new FormBienvenida();
+            bienvenida.Show();
+            this.Close();
+        }
+
+        private void FormGenerales_Load(object sender, EventArgs e)
+        {
+            Hashtable hashRegistros = new Hashtable();
+            hashRegistros = acciones.MostrarRegistrosGenerales();
         }
     }
 }

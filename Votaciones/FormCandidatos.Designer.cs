@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCandidatos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPartido = new System.Windows.Forms.ComboBox();
             this.txtCargo = new System.Windows.Forms.ComboBox();
@@ -46,7 +46,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.candidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargosYPartidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroCandidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,14 +58,12 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menúAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,7 +86,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtDescripcion);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.txtPartido);
             this.splitContainer1.Panel1.Controls.Add(this.txtCargo);
@@ -108,13 +105,13 @@
             this.splitContainer1.SplitterDistance = 377;
             this.splitContainer1.TabIndex = 7;
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 301);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 125);
-            this.textBox1.TabIndex = 24;
+            this.txtDescripcion.Location = new System.Drawing.Point(55, 301);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(261, 125);
+            this.txtDescripcion.TabIndex = 24;
             // 
             // label4
             // 
@@ -165,6 +162,7 @@
             this.btnCandidato.TabIndex = 14;
             this.btnCandidato.Text = "Guardar";
             this.btnCandidato.UseVisualStyleBackColor = false;
+            this.btnCandidato.Click += new System.EventHandler(this.btnCandidato_Click);
             // 
             // label3
             // 
@@ -249,23 +247,17 @@
             // ingresarToolStripMenuItem
             // 
             this.ingresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.candidatosToolStripMenuItem,
             this.cargosYPartidosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
             this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
             // 
-            // candidatosToolStripMenuItem
-            // 
-            this.candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
-            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.candidatosToolStripMenuItem.Text = "Candidatos";
-            // 
             // cargosYPartidosToolStripMenuItem
             // 
             this.cargosYPartidosToolStripMenuItem.Name = "cargosYPartidosToolStripMenuItem";
-            this.cargosYPartidosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.cargosYPartidosToolStripMenuItem.Text = "Cargos y partidos";
+            this.cargosYPartidosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.cargosYPartidosToolStripMenuItem.Text = "Generales";
+            this.cargosYPartidosToolStripMenuItem.Click += new System.EventHandler(this.cargosYPartidosToolStripMenuItem_Click);
             // 
             // verToolStripMenuItem
             // 
@@ -341,34 +333,26 @@
             this.menúAdministradorToolStripMenuItem.Name = "menúAdministradorToolStripMenuItem";
             this.menúAdministradorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.menúAdministradorToolStripMenuItem.Text = "Menú Administrador";
+            this.menúAdministradorToolStripMenuItem.Click += new System.EventHandler(this.menúAdministradorToolStripMenuItem_Click);
             // 
             // páginaPrincipalToolStripMenuItem
             // 
             this.páginaPrincipalToolStripMenuItem.Name = "páginaPrincipalToolStripMenuItem";
             this.páginaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.páginaPrincipalToolStripMenuItem.Text = "Página Principal";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-6, -4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(811, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.páginaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.páginaPrincipalToolStripMenuItem_Click);
             // 
             // FormCandidatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1334, 687);
+            this.ClientSize = new System.Drawing.Size(1370, 704);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox2);
             this.Name = "FormCandidatos";
             this.Text = "Ingreso Candidatos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormCandidatos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -379,7 +363,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,7 +382,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem candidatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargosYPartidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroCandidatosToolStripMenuItem;
@@ -412,10 +394,9 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menúAdministradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem páginaPrincipalToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox txtPartido;
         private System.Windows.Forms.ComboBox txtCargo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }
