@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGenerales));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMostrar = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnPartido = new System.Windows.Forms.Button();
             this.txtPartidos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,8 +48,6 @@
             this.btnCargo = new System.Windows.Forms.Button();
             this.txtCargos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMostrar = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,10 +66,8 @@
             this.btnIngresoCandidatos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -80,182 +79,188 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1335, 621);
+            this.panel1.Size = new System.Drawing.Size(1343, 644);
             this.panel1.TabIndex = 0;
             // 
-            // splitContainer1
+            // panel2
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Location = new System.Drawing.Point(16, 42);
-            this.splitContainer1.Name = "splitContainer1";
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtMostrar);
+            this.panel2.Location = new System.Drawing.Point(685, 47);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(628, 575);
+            this.panel2.TabIndex = 11;
             // 
-            // splitContainer1.Panel1
+            // label7
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnPartido);
-            this.splitContainer1.Panel1.Controls.Add(this.txtPartidos);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.pbLogo);
-            this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnFecha);
-            this.splitContainer1.Panel1.Controls.Add(this.txtFecha);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.btnCargo);
-            this.splitContainer1.Panel1.Controls.Add(this.txtCargos);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(233, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(159, 18);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Registros Guardados";
             // 
-            // splitContainer1.Panel2
+            // txtMostrar
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.txtMostrar);
-            this.splitContainer1.Size = new System.Drawing.Size(750, 527);
-            this.splitContainer1.SplitterDistance = 377;
-            this.splitContainer1.TabIndex = 7;
+            this.txtMostrar.FormattingEnabled = true;
+            this.txtMostrar.Location = new System.Drawing.Point(77, 67);
+            this.txtMostrar.Name = "txtMostrar";
+            this.txtMostrar.Size = new System.Drawing.Size(470, 459);
+            this.txtMostrar.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnPartido);
+            this.panel3.Controls.Add(this.txtPartidos);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.pbLogo);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.btnFecha);
+            this.panel3.Controls.Add(this.txtFecha);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.btnCargo);
+            this.panel3.Controls.Add(this.txtCargos);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(26, 47);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(628, 575);
+            this.panel3.TabIndex = 10;
             // 
             // btnPartido
             // 
-            this.btnPartido.Location = new System.Drawing.Point(258, 469);
+            this.btnPartido.Location = new System.Drawing.Point(455, 532);
             this.btnPartido.Name = "btnPartido";
             this.btnPartido.Size = new System.Drawing.Size(90, 23);
-            this.btnPartido.TabIndex = 23;
+            this.btnPartido.TabIndex = 36;
             this.btnPartido.Text = "Nuevo Partido";
             this.btnPartido.UseVisualStyleBackColor = true;
             this.btnPartido.Click += new System.EventHandler(this.btnPartido_Click);
             // 
             // txtPartidos
             // 
-            this.txtPartidos.Location = new System.Drawing.Point(87, 250);
+            this.txtPartidos.Location = new System.Drawing.Point(182, 257);
+            this.txtPartidos.MaxLength = 45;
             this.txtPartidos.Name = "txtPartidos";
-            this.txtPartidos.Size = new System.Drawing.Size(261, 20);
-            this.txtPartidos.TabIndex = 22;
+            this.txtPartidos.Size = new System.Drawing.Size(363, 20);
+            this.txtPartidos.TabIndex = 35;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 253);
+            this.label1.Location = new System.Drawing.Point(120, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 21;
+            this.label1.TabIndex = 34;
             this.label1.Text = "Partidos";
             // 
             // pbLogo
             // 
             this.pbLogo.Enabled = false;
-            this.pbLogo.Location = new System.Drawing.Point(111, 290);
+            this.pbLogo.Location = new System.Drawing.Point(173, 297);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(219, 162);
+            this.pbLogo.Size = new System.Drawing.Size(372, 229);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 20;
+            this.pbLogo.TabIndex = 33;
             this.pbLogo.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(108, 47);
+            this.label6.Location = new System.Drawing.Point(222, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(181, 18);
-            this.label6.TabIndex = 19;
+            this.label6.TabIndex = 32;
             this.label6.Text = "Registros generalizados";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 390);
+            this.label5.Location = new System.Drawing.Point(81, 426);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 18;
+            this.label5.TabIndex = 31;
             this.label5.Text = "Seleccionar logo";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 329);
+            this.pictureBox1.Location = new System.Drawing.Point(85, 365);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(62, 58);
-            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox1, "Click aquí");
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnFecha
             // 
-            this.btnFecha.Location = new System.Drawing.Point(258, 199);
+            this.btnFecha.Location = new System.Drawing.Point(455, 206);
             this.btnFecha.Name = "btnFecha";
             this.btnFecha.Size = new System.Drawing.Size(90, 23);
-            this.btnFecha.TabIndex = 14;
+            this.btnFecha.TabIndex = 29;
             this.btnFecha.Text = "Nueva Fecha";
             this.btnFecha.UseVisualStyleBackColor = true;
             this.btnFecha.Click += new System.EventHandler(this.btnFecha_Click);
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(136, 173);
+            this.txtFecha.Location = new System.Drawing.Point(231, 180);
+            this.txtFecha.MaxLength = 45;
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(212, 20);
-            this.txtFecha.TabIndex = 13;
+            this.txtFecha.Size = new System.Drawing.Size(314, 20);
+            this.txtFecha.TabIndex = 28;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 176);
+            this.label3.Location = new System.Drawing.Point(120, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 13);
-            this.label3.TabIndex = 12;
+            this.label3.TabIndex = 27;
             this.label3.Text = "Periodo Duración";
             // 
             // btnCargo
             // 
-            this.btnCargo.Location = new System.Drawing.Point(258, 121);
+            this.btnCargo.Location = new System.Drawing.Point(455, 128);
             this.btnCargo.Name = "btnCargo";
             this.btnCargo.Size = new System.Drawing.Size(90, 23);
-            this.btnCargo.TabIndex = 11;
+            this.btnCargo.TabIndex = 26;
             this.btnCargo.Text = "Nuevo Cargo";
             this.btnCargo.UseVisualStyleBackColor = true;
             this.btnCargo.Click += new System.EventHandler(this.btnCargo_Click);
             // 
             // txtCargos
             // 
-            this.txtCargos.Location = new System.Drawing.Point(87, 95);
+            this.txtCargos.Location = new System.Drawing.Point(182, 102);
+            this.txtCargos.MaxLength = 45;
             this.txtCargos.Name = "txtCargos";
-            this.txtCargos.Size = new System.Drawing.Size(261, 20);
-            this.txtCargos.TabIndex = 9;
+            this.txtCargos.Size = new System.Drawing.Size(363, 20);
+            this.txtCargos.TabIndex = 25;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 98);
+            this.label2.Location = new System.Drawing.Point(127, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 24;
             this.label2.Text = "Cargos";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(103, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 18);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Registros Guardados";
-            // 
-            // txtMostrar
-            // 
-            this.txtMostrar.FormattingEnabled = true;
-            this.txtMostrar.Location = new System.Drawing.Point(10, 47);
-            this.txtMostrar.Name = "txtMostrar";
-            this.txtMostrar.Size = new System.Drawing.Size(345, 459);
-            this.txtMostrar.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -265,7 +270,7 @@
             this.menúToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1331, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1339, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -383,7 +388,7 @@
             // 
             this.btnIngresoCandidatos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoCandidatos.Image")));
             this.btnIngresoCandidatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCandidatos.Location = new System.Drawing.Point(611, 639);
+            this.btnIngresoCandidatos.Location = new System.Drawing.Point(611, 662);
             this.btnIngresoCandidatos.Name = "btnIngresoCandidatos";
             this.btnIngresoCandidatos.Size = new System.Drawing.Size(155, 36);
             this.btnIngresoCandidatos.TabIndex = 8;
@@ -410,12 +415,10 @@
             this.Load += new System.EventHandler(this.FormGenerales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -428,8 +431,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem menúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroCandidatosToolStripMenuItem;
@@ -442,23 +443,26 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menúAdministradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem páginaPrincipalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem candidatosToolStripMenuItem;
+        private System.Windows.Forms.Button btnIngresoCandidatos;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnPartido;
+        private System.Windows.Forms.TextBox txtPartidos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnFecha;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCargo;
         private System.Windows.Forms.TextBox txtCargos;
-        private System.Windows.Forms.ListBox txtMostrar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem candidatosToolStripMenuItem;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnIngresoCandidatos;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Button btnPartido;
-        private System.Windows.Forms.TextBox txtPartidos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox txtMostrar;
     }
 }

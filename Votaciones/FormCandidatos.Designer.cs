@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCandidatos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPeriodo = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPartido = new System.Windows.Forms.ComboBox();
@@ -41,6 +43,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMostrar = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -58,101 +61,111 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menúAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtPeriodo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.Location = new System.Drawing.Point(22, 64);
+            this.panel1.Location = new System.Drawing.Point(12, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 557);
+            this.panel1.Size = new System.Drawing.Size(1346, 685);
             this.panel1.TabIndex = 1;
             // 
-            // splitContainer1
+            // panel3
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Location = new System.Drawing.Point(16, 42);
-            this.splitContainer1.Name = "splitContainer1";
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.txtPeriodo);
+            this.panel3.Controls.Add(this.txtDescripcion);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.txtPartido);
+            this.panel3.Controls.Add(this.txtCargo);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.btnCandidato);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.txtNombre);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(26, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(628, 609);
+            this.panel3.TabIndex = 9;
             // 
-            // splitContainer1.Panel1
+            // label5
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
-            this.splitContainer1.Panel1.Controls.Add(this.txtPeriodo);
-            this.splitContainer1.Panel1.Controls.Add(this.txtDescripcion);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.txtPartido);
-            this.splitContainer1.Panel1.Controls.Add(this.txtCargo);
-            this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.btnCandidato);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.txtNombre);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(122, 236);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Periodo";
             // 
-            // splitContainer1.Panel2
+            // txtPeriodo
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.txtMostrar);
-            this.splitContainer1.Size = new System.Drawing.Size(750, 499);
-            this.splitContainer1.SplitterDistance = 377;
-            this.splitContainer1.TabIndex = 7;
+            this.txtPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtPeriodo.FormattingEnabled = true;
+            this.txtPeriodo.Location = new System.Drawing.Point(135, 252);
+            this.txtPeriodo.Name = "txtPeriodo";
+            this.txtPeriodo.Size = new System.Drawing.Size(361, 21);
+            this.txtPeriodo.TabIndex = 37;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(55, 301);
+            this.txtDescripcion.Location = new System.Drawing.Point(41, 371);
+            this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(261, 125);
-            this.txtDescripcion.TabIndex = 24;
+            this.txtDescripcion.Size = new System.Drawing.Size(542, 151);
+            this.txtDescripcion.TabIndex = 36;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(134, 285);
+            this.label4.Location = new System.Drawing.Point(257, 328);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
-            this.label4.TabIndex = 23;
+            this.label4.TabIndex = 35;
             this.label4.Text = "Descripción breve";
             // 
             // txtPartido
             // 
             this.txtPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtPartido.FormattingEnabled = true;
-            this.txtPartido.Location = new System.Drawing.Point(86, 193);
+            this.txtPartido.Location = new System.Drawing.Point(135, 193);
             this.txtPartido.Name = "txtPartido";
-            this.txtPartido.Size = new System.Drawing.Size(261, 21);
-            this.txtPartido.TabIndex = 21;
+            this.txtPartido.Size = new System.Drawing.Size(361, 21);
+            this.txtPartido.TabIndex = 34;
             // 
             // txtCargo
             // 
             this.txtCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtCargo.FormattingEnabled = true;
-            this.txtCargo.Location = new System.Drawing.Point(86, 148);
+            this.txtCargo.Location = new System.Drawing.Point(135, 140);
             this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(261, 21);
-            this.txtCargo.TabIndex = 20;
+            this.txtCargo.Size = new System.Drawing.Size(361, 21);
+            this.txtCargo.TabIndex = 33;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(110, 62);
+            this.label6.Location = new System.Drawing.Point(236, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(153, 18);
-            this.label6.TabIndex = 19;
+            this.label6.TabIndex = 32;
             this.label6.Text = "Registro candidatos";
             // 
             // btnCandidato
@@ -160,10 +173,10 @@
             this.btnCandidato.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCandidato.Image = ((System.Drawing.Image)(resources.GetObject("btnCandidato.Image")));
             this.btnCandidato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCandidato.Location = new System.Drawing.Point(268, 446);
+            this.btnCandidato.Location = new System.Drawing.Point(498, 552);
             this.btnCandidato.Name = "btnCandidato";
-            this.btnCandidato.Size = new System.Drawing.Size(87, 34);
-            this.btnCandidato.TabIndex = 14;
+            this.btnCandidato.Size = new System.Drawing.Size(105, 34);
+            this.btnCandidato.TabIndex = 31;
             this.btnCandidato.Text = "Guardar";
             this.btnCandidato.UseVisualStyleBackColor = false;
             this.btnCandidato.Click += new System.EventHandler(this.btnCandidato_Click);
@@ -172,57 +185,69 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 196);
+            this.label3.Location = new System.Drawing.Point(125, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 12;
+            this.label3.TabIndex = 30;
             this.label3.Text = "Partido";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(86, 105);
+            this.txtNombre.Location = new System.Drawing.Point(135, 90);
+            this.txtNombre.MaxLength = 45;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(261, 20);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.Size = new System.Drawing.Size(361, 20);
+            this.txtNombre.TabIndex = 29;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 108);
+            this.label1.Location = new System.Drawing.Point(122, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 27;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 151);
+            this.label2.Location = new System.Drawing.Point(122, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 28;
             this.label2.Text = "Cargo";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtMostrar);
+            this.panel2.Location = new System.Drawing.Point(692, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(628, 609);
+            this.panel2.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(98, 8);
+            this.label7.Location = new System.Drawing.Point(233, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(159, 36);
-            this.label7.TabIndex = 20;
+            this.label7.TabIndex = 22;
             this.label7.Text = "Registros Guardados\r\n  (CANDIDATOS)";
             // 
             // txtMostrar
             // 
             this.txtMostrar.FormattingEnabled = true;
             this.txtMostrar.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtMostrar.Location = new System.Drawing.Point(10, 47);
+            this.txtMostrar.Location = new System.Drawing.Point(47, 114);
             this.txtMostrar.Name = "txtMostrar";
-            this.txtMostrar.Size = new System.Drawing.Size(345, 433);
-            this.txtMostrar.TabIndex = 0;
+            this.txtMostrar.Size = new System.Drawing.Size(531, 420);
+            this.txtMostrar.TabIndex = 21;
             // 
             // menuStrip1
             // 
@@ -232,7 +257,7 @@
             this.menúToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(779, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1342, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -346,25 +371,6 @@
             this.páginaPrincipalToolStripMenuItem.Text = "Página Principal";
             this.páginaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.páginaPrincipalToolStripMenuItem_Click);
             // 
-            // txtPeriodo
-            // 
-            this.txtPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtPeriodo.FormattingEnabled = true;
-            this.txtPeriodo.Location = new System.Drawing.Point(86, 238);
-            this.txtPeriodo.Name = "txtPeriodo";
-            this.txtPeriodo.Size = new System.Drawing.Size(261, 21);
-            this.txtPeriodo.TabIndex = 25;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 241);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Periodo";
-            // 
             // FormCandidatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,12 +384,10 @@
             this.Load += new System.EventHandler(this.FormCandidatos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -393,15 +397,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCandidato;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox txtMostrar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
@@ -417,11 +412,21 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menúAdministradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem páginaPrincipalToolStripMenuItem;
-        private System.Windows.Forms.ComboBox txtPartido;
-        private System.Windows.Forms.ComboBox txtCargo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox txtMostrar;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox txtPeriodo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox txtPartido;
+        private System.Windows.Forms.ComboBox txtCargo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCandidato;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
