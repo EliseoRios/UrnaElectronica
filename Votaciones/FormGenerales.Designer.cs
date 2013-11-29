@@ -35,7 +35,7 @@
             this.btnPartido = new System.Windows.Forms.Button();
             this.txtPartidos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,6 @@
             this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.candidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargosYPartidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroCandidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.partidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +62,6 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menúAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnIngresoCandidatos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
@@ -71,22 +69,22 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.Location = new System.Drawing.Point(26, 53);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 557);
+            this.panel1.Size = new System.Drawing.Size(1335, 621);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -100,7 +98,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnPartido);
             this.splitContainer1.Panel1.Controls.Add(this.txtPartidos);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.picLogo);
+            this.splitContainer1.Panel1.Controls.Add(this.pbLogo);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
@@ -115,18 +113,19 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label7);
             this.splitContainer1.Panel2.Controls.Add(this.txtMostrar);
-            this.splitContainer1.Size = new System.Drawing.Size(750, 499);
+            this.splitContainer1.Size = new System.Drawing.Size(750, 527);
             this.splitContainer1.SplitterDistance = 377;
             this.splitContainer1.TabIndex = 7;
             // 
             // btnPartido
             // 
-            this.btnPartido.Location = new System.Drawing.Point(258, 444);
+            this.btnPartido.Location = new System.Drawing.Point(258, 469);
             this.btnPartido.Name = "btnPartido";
             this.btnPartido.Size = new System.Drawing.Size(90, 23);
             this.btnPartido.TabIndex = 23;
             this.btnPartido.Text = "Nuevo Partido";
             this.btnPartido.UseVisualStyleBackColor = true;
+            this.btnPartido.Click += new System.EventHandler(this.btnPartido_Click);
             // 
             // txtPartidos
             // 
@@ -145,20 +144,21 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Partidos";
             // 
-            // picLogo
+            // pbLogo
             // 
-            this.picLogo.Enabled = false;
-            this.picLogo.Location = new System.Drawing.Point(111, 276);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(219, 131);
-            this.picLogo.TabIndex = 20;
-            this.picLogo.TabStop = false;
+            this.pbLogo.Enabled = false;
+            this.pbLogo.Location = new System.Drawing.Point(111, 290);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(219, 162);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 20;
+            this.pbLogo.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(106, 62);
+            this.label6.Location = new System.Drawing.Point(108, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(181, 18);
             this.label6.TabIndex = 19;
@@ -168,7 +168,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 367);
+            this.label5.Location = new System.Drawing.Point(19, 390);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 18;
@@ -177,7 +177,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 306);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 329);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(62, 58);
             this.pictureBox1.TabIndex = 17;
@@ -193,6 +193,7 @@
             this.btnFecha.TabIndex = 14;
             this.btnFecha.Text = "Nueva Fecha";
             this.btnFecha.UseVisualStyleBackColor = true;
+            this.btnFecha.Click += new System.EventHandler(this.btnFecha_Click);
             // 
             // txtFecha
             // 
@@ -219,6 +220,7 @@
             this.btnCargo.TabIndex = 11;
             this.btnCargo.Text = "Nuevo Cargo";
             this.btnCargo.UseVisualStyleBackColor = true;
+            this.btnCargo.Click += new System.EventHandler(this.btnCargo_Click);
             // 
             // txtCargos
             // 
@@ -253,7 +255,7 @@
             this.txtMostrar.FormattingEnabled = true;
             this.txtMostrar.Location = new System.Drawing.Point(10, 47);
             this.txtMostrar.Name = "txtMostrar";
-            this.txtMostrar.Size = new System.Drawing.Size(345, 433);
+            this.txtMostrar.Size = new System.Drawing.Size(345, 459);
             this.txtMostrar.TabIndex = 0;
             // 
             // menuStrip1
@@ -264,7 +266,7 @@
             this.menúToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(779, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -283,23 +285,17 @@
             // ingresarToolStripMenuItem
             // 
             this.ingresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.candidatosToolStripMenuItem,
-            this.cargosYPartidosToolStripMenuItem});
+            this.candidatosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
             // 
             // candidatosToolStripMenuItem
             // 
             this.candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
-            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.candidatosToolStripMenuItem.Text = "Candidatos";
-            // 
-            // cargosYPartidosToolStripMenuItem
-            // 
-            this.cargosYPartidosToolStripMenuItem.Name = "cargosYPartidosToolStripMenuItem";
-            this.cargosYPartidosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.cargosYPartidosToolStripMenuItem.Text = "Cargos y partidos";
+            this.candidatosToolStripMenuItem.Click += new System.EventHandler(this.candidatosToolStripMenuItem_Click);
             // 
             // verToolStripMenuItem
             // 
@@ -309,7 +305,7 @@
             this.cargosToolStripMenuItem,
             this.organizadosToolStripMenuItem});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.verToolStripMenuItem.Text = "Ver";
             // 
             // registroCandidatosToolStripMenuItem
@@ -346,7 +342,7 @@
             this.ingresarPlanillaToolStripMenuItem,
             this.páginaSoporteToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ingresarPlanillaToolStripMenuItem
@@ -367,7 +363,7 @@
             this.menúAdministradorToolStripMenuItem,
             this.páginaPrincipalToolStripMenuItem});
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // menúAdministradorToolStripMenuItem
@@ -375,28 +371,20 @@
             this.menúAdministradorToolStripMenuItem.Name = "menúAdministradorToolStripMenuItem";
             this.menúAdministradorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.menúAdministradorToolStripMenuItem.Text = "Menú Administrador";
+            this.menúAdministradorToolStripMenuItem.Click += new System.EventHandler(this.menúAdministradorToolStripMenuItem_Click);
             // 
             // páginaPrincipalToolStripMenuItem
             // 
             this.páginaPrincipalToolStripMenuItem.Name = "páginaPrincipalToolStripMenuItem";
             this.páginaPrincipalToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.páginaPrincipalToolStripMenuItem.Text = "Página Principal";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-2, -7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(811, 57);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.páginaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.páginaPrincipalToolStripMenuItem_Click);
             // 
             // btnIngresoCandidatos
             // 
             this.btnIngresoCandidatos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoCandidatos.Image")));
             this.btnIngresoCandidatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCandidatos.Location = new System.Drawing.Point(639, 625);
+            this.btnIngresoCandidatos.Location = new System.Drawing.Point(611, 639);
             this.btnIngresoCandidatos.Name = "btnIngresoCandidatos";
             this.btnIngresoCandidatos.Size = new System.Drawing.Size(155, 36);
             this.btnIngresoCandidatos.TabIndex = 8;
@@ -411,15 +399,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1334, 687);
+            this.ClientSize = new System.Drawing.Size(1376, 710);
             this.Controls.Add(this.btnIngresoCandidatos);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormGenerales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso Datos Generales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormGenerales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -428,11 +417,10 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,15 +453,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem candidatosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargosYPartidosToolStripMenuItem;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnIngresoCandidatos;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnPartido;
         private System.Windows.Forms.TextBox txtPartidos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
     }
 }

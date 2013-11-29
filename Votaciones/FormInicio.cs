@@ -32,15 +32,22 @@ namespace Votaciones
             {
                 FormBienvenida bienbenido = new FormBienvenida();
                 bienbenido.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Verifique sus datos","Datos incorrectos..");
+                txtContraseña.Text = "";
             }
         }
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
+            /*FormGenerales ayuda = new FormGenerales();
+            ayuda.Show();
+            this.SetVisibleCore(false);
+            this.Hide();*/
+
             String nombre = "";
             acciones.ComprobarSiesPrimero();
             while (acciones.Leer.Read())

@@ -189,5 +189,87 @@ namespace Votaciones
             this.Comando = null;
             this.Leer = null;
         }
+
+        public bool IngresoCiudadano(String Codigo)
+        {
+            Boolean acceso = true;
+            /*this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "SELECT * FROM ciudadanos WHERE folio = "+Codigo+";";
+            this.Leer = Comando.ExecuteReader();*/
+            return acceso;
+        }
+
+        public void GuardadCargo(String Cargo)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO cargos (nombre) VALUES ('"+Cargo+"');";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            MessageBox.Show("Cargo: " + Cargo,"Guargado..");
+            Comando.ExecuteNonQuery();
+        }
+
+        public void GuardarFecha(String Fecha)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO periodo (Duracion) VALUES ('"+Fecha+"');";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            MessageBox.Show("Fecha: " + Fecha, "Guardado..");
+            Comando.ExecuteNonQuery();
+        }
+
+        public void GuardarPartido(String Partido, String Direccion)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO partidos (nombre,logo) VALUES ('"+Partido+"','"+Direccion+"');";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            int exito = Comando.ExecuteNonQuery();
+            
+            if (exito == 1)
+            {
+                MessageBox.Show("Partido: " + Partido, "Guardado..");
+            }
+            else
+            {
+                MessageBox.Show("Fallo al guardar", "No guardo");
+            }
+        }
+
+        public void GuardarCandidato(String Nombre, String Cargo, String Partido, String Descripcion)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO cardidatos (Nombre, Cargo, Partido, Descripcion) VALUES ('"+Nombre+"','"+Cargo+"','"+Partido+"','"+Descripcion+"')";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            MessageBox.Show("Candidato: "+Nombre ,"Guardado..");
+            this.Comando.ExecuteNonQuery();
+        }
+
+        public Hashtable MostrarRegistrosGenerales()
+        {
+            Hashtable HashRegistros = new Hashtable();
+
+            this.AbrirConexion();
+            this.Inicializar();
+
+            String SqlCargo = "";
+            this.Comando = new MySqlCommand(SqlCargo,Con);
+            this.Leer = this.Comando.ExecuteReader();
+
+            String SqlDuracion = "";
+            this.Comando = new MySqlCommand(SqlDuracion, this.Con);
+            this.Leer = this.Comando.ExecuteReader();
+
+            String SqlPartido = "";
+            this.Comando = new MySqlCommand(SqlPartido, this.Con);
+            this.Leer = this.Comando.ExecuteReader();
+
+            this.CerrarConexion();
+
+            return HashRegistros;
+        }
     }
 }

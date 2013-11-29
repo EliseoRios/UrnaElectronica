@@ -8,27 +8,35 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
+using System.Drawing.Imaging;
+using System.Collections;
+
 namespace Votaciones
 {
     public partial class FormGenerales : Form
     {
+        
+
         public FormGenerales()
         {
             InitializeComponent();
             //1350*725
         }
 
+        Acciones acciones = new Acciones();
+        String Direccion;
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog Imagen = new OpenFileDialog();
-            Imagen.Filter = "Archivos de imagen|*.jpg;*.png;*gif;";
-            Imagen.InitialDirectory = "C:\\pictures";
+            OpenFileDialog BuscarImagen = new OpenFileDialog();
+            BuscarImagen.Filter = "Archivos de imagen|*.jpg|*.png|*.gif";
 
-            if (Imagen.ShowDialog()==DialogResult.OK)
+            BuscarImagen.InitialDirectory = @"C:\\Documents\Images";
+
+            if(BuscarImagen.ShowDialog()==DialogResult.OK)
             {
-                String Direccion = Imagen.FileName;
-                this.picLogo.ImageLocation = Direccion;
-                picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Direccion = BuscarImagen.FileName;
+                this.pbLogo.ImageLocation = this.Direccion;
             }
         }
 
@@ -36,6 +44,7 @@ namespace Votaciones
         {
             FormCandidatos forma5 = new FormCandidatos();
             forma5.Show();
+            this.Close();
         }
 
         private void registroCandidatosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,6 +73,102 @@ namespace Votaciones
             FormVer VerTodos = new FormVer();
             VerTodos.MostrarNombre("TODOS LOS REGISTROS");
             VerTodos.Show();
+        }
+
+        public byte[] ConvertirAByte(Image Imagen, ImageFormat FormatoImagen)
+        {
+            byte[] ImagenByte;
+
+            try
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Imagen.Save(ms, FormatoImagen);
+                    ImagenByte = ms.ToArray();
+                }
+            }
+            catch (Exception) 
+            { 
+                throw; 
+            }
+
+            return ImagenByte;
+        }
+
+        private void btnCargo_Click(object sender, EventArgs e)
+        {
+            if (txtCargos.Text.Trim() != "")
+            {
+                acciones.GuardadCargo(txtCargos.Text);
+                txtCargos.Text = "";
+            }
+        }
+
+        private void btnFecha_Click(object sender, EventArgs e)
+        {
+            acciones.GuardarFecha(txtFecha.Text);
+            txtFecha.Text = "";
+        }
+
+        private void btnPartido_Click(object sender, EventArgs e)
+        {
+            String Partido = txtPartidos.Text;
+
+            if (Partido.Trim() != "")
+            {
+                String letra = "";
+                String url = "";
+
+                for (int i = 0; i < Direccion.Length; i++ )
+                {
+                    letra = Direccion.Substring(i,1);
+
+                    if (letra == "\\")
+                    {
+                        url = url + letra + "\\";
+                    }
+                    else
+                    {
+                        url = url + letra;
+                    }
+                }
+                acciones.GuardarPartido(Partido, url);
+
+                txtPartidos.Text = "";
+                pbLogo.Image = null;
+            }
+            else
+            {
+                MessageBox.Show("Agregue nombre del partido","No valido..");
+            }
+
+        }
+
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCandidatos forma5 = new FormCandidatos();
+            forma5.Show();
+            this.Close();
+        }
+
+        private void menúAdministradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdministrador administrador = new FormAdministrador();
+            administrador.Show();
+            this.Close();
+        }
+
+        private void páginaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBienvenida bienvenida = new FormBienvenida();
+            bienvenida.Show();
+            this.Close();
+        }
+
+        private void FormGenerales_Load(object sender, EventArgs e)
+        {
+            Hashtable hashRegistros = new Hashtable();
+            hashRegistros = acciones.MostrarRegistrosGenerales();
         }
     }
 }

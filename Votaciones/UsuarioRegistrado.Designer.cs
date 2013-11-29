@@ -100,6 +100,7 @@
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UsuarioRegistrado";
             this.Text = "Usuario Registrado";
             this.Load += new System.EventHandler(this.UsuarioRegistrado_Load);
