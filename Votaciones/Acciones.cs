@@ -242,7 +242,7 @@ namespace Votaciones
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "INSERT INTO cardidatos (Nombre, Cargo, Partido, Descripcion) VALUES ('"+Nombre+"','"+Cargo+"','"+Partido+"','"+Descripcion+"')";
+            String Sql = "INSERT INTO candidatos (Nombre, Cargo, Partido, Descripcion) VALUES ('"+Nombre+"','"+Cargo+"','"+Partido+"','"+Descripcion+"')";
             this.Comando = new MySqlCommand(Sql,this.Con);
             MessageBox.Show("Candidato: "+Nombre ,"Guardado..");
             this.Comando.ExecuteNonQuery();
@@ -273,6 +273,15 @@ namespace Votaciones
             String SqlPartido = "SELECT * FROM partidos;";
             this.Comando = new MySqlCommand(SqlPartido, this.Con);
             this.Leer = this.Comando.ExecuteReader();
+        }
+
+        public void CandidatosRegistrados()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "SELECT * FROM candidatos;";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            this.Leer = Comando.ExecuteReader();
         }
     }
 }

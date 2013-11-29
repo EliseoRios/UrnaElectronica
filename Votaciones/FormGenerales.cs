@@ -108,9 +108,12 @@ namespace Votaciones
 
         private void btnFecha_Click(object sender, EventArgs e)
         {
-            acciones.GuardarFecha(txtFecha.Text);
-            txtFecha.Text = "";
-            FormGenerales_Load(sender, e);
+            if (txtFecha.Text.Trim() != "")
+            {
+             acciones.GuardarFecha(txtFecha.Text);
+             txtFecha.Text = "";
+             FormGenerales_Load(sender, e);
+            }
         }
 
         private void btnPartido_Click(object sender, EventArgs e)

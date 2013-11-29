@@ -58,6 +58,8 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menúAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtPeriodo = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -86,6 +88,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.txtPeriodo);
             this.splitContainer1.Panel1.Controls.Add(this.txtDescripcion);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.txtPartido);
@@ -127,7 +131,7 @@
             // 
             this.txtPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtPartido.FormattingEnabled = true;
-            this.txtPartido.Location = new System.Drawing.Point(87, 238);
+            this.txtPartido.Location = new System.Drawing.Point(86, 193);
             this.txtPartido.Name = "txtPartido";
             this.txtPartido.Size = new System.Drawing.Size(261, 21);
             this.txtPartido.TabIndex = 21;
@@ -136,7 +140,7 @@
             // 
             this.txtCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtCargo.FormattingEnabled = true;
-            this.txtCargo.Location = new System.Drawing.Point(86, 168);
+            this.txtCargo.Location = new System.Drawing.Point(86, 148);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(261, 21);
             this.txtCargo.TabIndex = 20;
@@ -168,7 +172,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 241);
+            this.label3.Location = new System.Drawing.Point(27, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 12;
@@ -185,7 +189,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 108);
+            this.label1.Location = new System.Drawing.Point(27, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 2;
@@ -195,7 +199,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 171);
+            this.label2.Location = new System.Drawing.Point(37, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 3;
@@ -213,8 +217,8 @@
             // 
             // txtMostrar
             // 
-            this.txtMostrar.Enabled = false;
             this.txtMostrar.FormattingEnabled = true;
+            this.txtMostrar.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtMostrar.Location = new System.Drawing.Point(10, 47);
             this.txtMostrar.Name = "txtMostrar";
             this.txtMostrar.Size = new System.Drawing.Size(345, 433);
@@ -342,6 +346,25 @@
             this.páginaPrincipalToolStripMenuItem.Text = "Página Principal";
             this.páginaPrincipalToolStripMenuItem.Click += new System.EventHandler(this.páginaPrincipalToolStripMenuItem_Click);
             // 
+            // txtPeriodo
+            // 
+            this.txtPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtPeriodo.FormattingEnabled = true;
+            this.txtPeriodo.Location = new System.Drawing.Point(86, 238);
+            this.txtPeriodo.Name = "txtPeriodo";
+            this.txtPeriodo.Size = new System.Drawing.Size(261, 21);
+            this.txtPeriodo.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 241);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Periodo";
+            // 
             // FormCandidatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,5 +421,7 @@
         private System.Windows.Forms.ComboBox txtCargo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox txtPeriodo;
     }
 }

@@ -74,7 +74,15 @@ namespace Votaciones
             String Partido = txtPartido.Text;
             String Descripcion = txtDescripcion.Text;
 
-            acciones.GuardarCandidato(Nombre, Cargo, Partido, Descripcion);
+            if (Nombre.Trim() != "")
+            {
+                acciones.GuardarCandidato(Nombre, Cargo, Partido, Descripcion);
+                FormCandidatos_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("El nombre esta vacio","Aviso..");
+            }
 
             txtNombre.Text = "";
             txtDescripcion.Text = "";
@@ -82,10 +90,47 @@ namespace Votaciones
 
         private void FormCandidatos_Load(object sender, EventArgs e)
         {
-            while(true)
+            CargarDatosGenerales();
+            CargarCandidatos();
+        }
+
+        private void CargarDatosGenerales()
+        {
+            acciones.RegistrosGeneralesCargos();
+
+            while (acciones.Leer.Read())
             {
-              txtCargo.Items.Add("lo que obtenga");
-              txtPartido.Items.Add("lo que obtenga");
+                txtCargo.Items.Add(acciones.Leer["Nombre"]);
+            }
+
+            acciones.RegistrosGeneralesPartidos();
+
+            while (acciones.Leer.Read())
+            {
+                txtPartido.Items.Add(acciones.Leer["nombre"]);
+            }
+
+            acciones.RegistrosGeneralesPeriodos();
+
+            while (acciones.Leer.Read())
+            {
+                txtPeriodo.Items.Add(acciones.Leer["Duracion"]);
+            }
+        }
+
+        private void CargarCandidatos()
+        {
+            acciones.CandidatosRegistrados();
+
+            txtMostrar.Items.Clear();
+            while(acciones.Leer.Read())
+            {
+                txtMostrar.Items.Add("CANDIDATO "+acciones.Leer["Id"]+" ("+acciones.Leer["Cargo"]+")");
+                txtMostrar.Items.Add(acciones.Leer["Nombre"]);
+                txtMostrar.Items.Add(acciones.Leer["Cargo"]);
+                txtMostrar.Items.Add(acciones.Leer["Partido"]);
+                txtMostrar.Items.Add(acciones.Leer["Descripcion"]);
+                txtMostrar.Items.Add("");
             }
         }
     }

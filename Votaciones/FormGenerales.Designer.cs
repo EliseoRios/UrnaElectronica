@@ -251,7 +251,6 @@
             // 
             // txtMostrar
             // 
-            this.txtMostrar.Enabled = false;
             this.txtMostrar.FormattingEnabled = true;
             this.txtMostrar.Location = new System.Drawing.Point(10, 47);
             this.txtMostrar.Name = "txtMostrar";
