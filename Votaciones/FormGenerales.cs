@@ -30,9 +30,15 @@ namespace Votaciones
         {
             OpenFileDialog BuscarImagen = new OpenFileDialog();
             BuscarImagen.Filter = "Archivos de imagen|*.jpg|*.png|*.gif";
+<<<<<<< HEAD
 
             BuscarImagen.InitialDirectory = @"C:\\Documents\Images";
 
+=======
+
+            BuscarImagen.InitialDirectory = @"C:\\Documents\Images";
+
+>>>>>>> develop
             if(BuscarImagen.ShowDialog()==DialogResult.OK)
             {
                 this.Direccion = BuscarImagen.FileName;
@@ -102,12 +108,21 @@ namespace Votaciones
                 acciones.GuardadCargo(txtCargos.Text);
                 txtCargos.Text = "";
             }
+<<<<<<< HEAD
+=======
+
+            FormGenerales_Load(sender, e);
+>>>>>>> develop
         }
 
         private void btnFecha_Click(object sender, EventArgs e)
         {
             acciones.GuardarFecha(txtFecha.Text);
             txtFecha.Text = "";
+<<<<<<< HEAD
+=======
+            FormGenerales_Load(sender, e);
+>>>>>>> develop
         }
 
         private void btnPartido_Click(object sender, EventArgs e)
@@ -119,6 +134,7 @@ namespace Votaciones
                 String letra = "";
                 String url = "";
 
+<<<<<<< HEAD
                 for (int i = 0; i < Direccion.Length; i++ )
                 {
                     letra = Direccion.Substring(i,1);
@@ -132,10 +148,35 @@ namespace Votaciones
                         url = url + letra;
                     }
                 }
+=======
+                if(pbLogo.Image != null)
+                {
+                 int i = 0;
+                 for (i = 0; i < Direccion.Length; i++ )
+                 {
+                     letra = Direccion.Substring(i,1);
+
+                     if (letra == "\\")
+                     {
+                         url = url + letra + "\\";
+                     }
+                     else
+                     {
+                         url = url + letra;
+                     }
+                 }
+                }
+
+>>>>>>> develop
                 acciones.GuardarPartido(Partido, url);
 
                 txtPartidos.Text = "";
                 pbLogo.Image = null;
+<<<<<<< HEAD
+=======
+
+                FormGenerales_Load(sender, e);
+>>>>>>> develop
             }
             else
             {
@@ -167,8 +208,40 @@ namespace Votaciones
 
         private void FormGenerales_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Hashtable hashRegistros = new Hashtable();
             hashRegistros = acciones.MostrarRegistrosGenerales();
+=======
+            txtMostrar.Items.Clear();
+            txtMostrar.Items.Add("LISTA DE CARGOS");
+            acciones.RegistrosGeneralesCargos();
+
+            while (acciones.Leer.Read())
+            {
+                String Cargo = acciones.Leer["Nombre"].ToString();
+                txtMostrar.Items.Add(Cargo);
+            }
+
+            txtMostrar.Items.Add("\n");
+            txtMostrar.Items.Add("LISTA DE PERIODOS");
+            acciones.RegistrosGeneralesPeriodos();
+
+            while (acciones.Leer.Read())
+            {
+                String Periodos = acciones.Leer["Duracion"].ToString();
+                txtMostrar.Items.Add(Periodos);
+            }
+
+            txtMostrar.Items.Add("\n");
+            txtMostrar.Items.Add("LISTA DE PARTIDOS");
+            acciones.RegistrosGeneralesPartidos();
+
+            while (acciones.Leer.Read())
+            {
+                String Partidos = acciones.Leer["nombre"].ToString();
+                txtMostrar.Items.Add(Partidos);
+            }
+>>>>>>> develop
         }
     }
 }

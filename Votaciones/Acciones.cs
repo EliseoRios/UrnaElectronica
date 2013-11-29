@@ -248,6 +248,7 @@ namespace Votaciones
             this.Comando.ExecuteNonQuery();
         }
 
+<<<<<<< HEAD
         public Hashtable MostrarRegistrosGenerales()
         {
             Hashtable HashRegistros = new Hashtable();
@@ -270,6 +271,33 @@ namespace Votaciones
             this.CerrarConexion();
 
             return HashRegistros;
+=======
+        public void RegistrosGeneralesCargos()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String SqlCargo = "SELECT * FROM cargos;";
+            this.Comando = new MySqlCommand(SqlCargo, Con);
+            this.Leer = this.Comando.ExecuteReader();
+        }
+
+        public void RegistrosGeneralesPeriodos()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String SqlDuracion = "SELECT * FROM periodo;";
+            this.Comando = new MySqlCommand(SqlDuracion, this.Con);
+            this.Leer = this.Comando.ExecuteReader();
+        }
+
+        public void RegistrosGeneralesPartidos()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String SqlPartido = "SELECT * FROM partidos;";
+            this.Comando = new MySqlCommand(SqlPartido, this.Con);
+            this.Leer = this.Comando.ExecuteReader();
+>>>>>>> develop
         }
     }
 }
