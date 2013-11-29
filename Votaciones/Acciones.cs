@@ -248,28 +248,31 @@ namespace Votaciones
             this.Comando.ExecuteNonQuery();
         }
 
-        public Hashtable MostrarRegistrosGenerales()
+        public void RegistrosGeneralesCargos()
         {
-            Hashtable HashRegistros = new Hashtable();
-
             this.AbrirConexion();
             this.Inicializar();
-
-            String SqlCargo = "";
-            this.Comando = new MySqlCommand(SqlCargo,Con);
+            String SqlCargo = "SELECT * FROM cargos;";
+            this.Comando = new MySqlCommand(SqlCargo, Con);
             this.Leer = this.Comando.ExecuteReader();
+        }
 
-            String SqlDuracion = "";
+        public void RegistrosGeneralesPeriodos()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String SqlDuracion = "SELECT * FROM periodo;";
             this.Comando = new MySqlCommand(SqlDuracion, this.Con);
             this.Leer = this.Comando.ExecuteReader();
+        }
 
-            String SqlPartido = "";
+        public void RegistrosGeneralesPartidos()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String SqlPartido = "SELECT * FROM partidos;";
             this.Comando = new MySqlCommand(SqlPartido, this.Con);
             this.Leer = this.Comando.ExecuteReader();
-
-            this.CerrarConexion();
-
-            return HashRegistros;
         }
     }
 }
