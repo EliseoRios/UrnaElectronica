@@ -48,7 +48,6 @@ namespace Votaciones
             {
                 Nombre = Leer["nombre"].ToString();
                 CadenaCantidad = Leer["cantidad"].ToString();
-                MessageBox.Show(CadenaCantidad,"CantidadCadena");
             }
 
             if(CadenaCantidad == "")
@@ -282,6 +281,27 @@ namespace Votaciones
             String Sql = "SELECT * FROM candidatos;";
             this.Comando = new MySqlCommand(Sql,this.Con);
             this.Leer = Comando.ExecuteReader();
+        }
+
+        public void EliminarUrna()
+        {
+            String Sql = 
+             "TRUNCATE TABLE candidatos;"
+            +"TRUNCATE TABLE partidos;"
+            +"TRUNCATE TABLE periodo;"
+            +"TRUNCATE TABLE votantes;"
+            + "TRUNCATE TABLE cargos;"
+            + "TRUNCATE TABLE cliente;"
+            + "TRUNCATE TABLE primer_registro;"
+            + "TRUNCATE TABLE problemas;"
+            +"TRUNCATE TABLE registros;"
+            +"UPDATE  incidentes SET  cantidad =  '0' WHERE  id <> 0;";
+
+            this.AbrirConexion();
+            this.Inicializar();
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            this.Comando.ExecuteNonQuery();
+
         }
     }
 }

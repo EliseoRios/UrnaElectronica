@@ -133,5 +133,19 @@ namespace Votaciones
                 txtMostrar.Items.Add("");
             }
         }
+
+        private void páginaSoporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAyuda ayuda = new FormAyuda();
+            ayuda.Show();
+            this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            FormGenerales generales = new FormGenerales();
+            generales.Show();
+            this.Close();
+        }
     }
 }

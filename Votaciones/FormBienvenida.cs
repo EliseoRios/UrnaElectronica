@@ -27,8 +27,8 @@ namespace Votaciones
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FormAdministrador forma3 = new FormAdministrador();
-            forma3.Show();
+            FormAyuda ayuda = new FormAyuda();
+            ayuda.Show();
         }
 
         private void btnVotante_Click(object sender, EventArgs e)
@@ -36,5 +36,11 @@ namespace Votaciones
             String Codigo = txtCodigo.Text;
             Boolean acceso = acciones.IngresoCiudadano(Codigo);
         }
+
+         private void pictureBox2_Click(object sender, EventArgs e)
+         {
+               ConfirmarSalida salir = new ConfirmarSalida();
+               salir.Show();
+         }
     }
 }

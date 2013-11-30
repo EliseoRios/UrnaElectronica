@@ -210,5 +210,20 @@ namespace Votaciones
                 txtMostrar.Items.Add(Partidos);
             }
         }
+
+        private void páginaSoporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAyuda ayuda = new FormAyuda();
+            ayuda.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FormAdministrador admin = new FormAdministrador();
+            admin.Show();
+            this.Close();
+        }
+
+
     }
 }

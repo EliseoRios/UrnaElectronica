@@ -29,7 +29,10 @@ namespace Votaciones
             
             if(confirmacion==DialogResult.Yes)
             {
-                MessageBox.Show("Borrado exitoso", "Operación Realizada", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Acciones acciones = new Acciones();
+                acciones.EliminarUrna();
+                
+                Application.Exit();
             }
         }
 
@@ -45,7 +48,7 @@ namespace Votaciones
         {
             FormBienvenida bienbenida = new FormBienvenida();
             bienbenida.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

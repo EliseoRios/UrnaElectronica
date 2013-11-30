@@ -209,14 +209,17 @@
             // 
             // PrimerRegistro
             // 
+            this.AcceptButton = this.btnGuargar;
             resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuargar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "PrimerRegistro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrimerRegistro_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

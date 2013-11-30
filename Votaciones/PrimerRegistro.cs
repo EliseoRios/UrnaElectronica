@@ -56,17 +56,30 @@ namespace Votaciones
             else if (Contrasenia.Trim() != Confirmacion.Trim())
             {
                 MessageBox.Show("Verifique contraseña", "Información..");
+                txtContrasenia.Text = "";
+                txtConfirmar.Text = "";
             }
             else if(Contrasenia == Confirmacion)
             {
                 acciones.AlmacenarComoPrimero();
                 ContraseñaEncriptada = password.Encriptar(Contrasenia);
                 acciones.PrimerRegistro(Nombre.ToLower(), Direccion, Telefono, Celular, Oficina, Ciudad, CP, Sexo, ContraseñaEncriptada);
-                MessageBox.Show("No olvide su contraseña ya que es única", "Bienbenido Administrador");
+                DialogResult confirma = MessageBox.Show("No olvide su contraseña ya que es única", "Registro exitoso");
+                
+                if(confirma == DialogResult.OK)
+                {
+                    Application.Exit();
+                }
+
                 FormBienvenida bienbenido = new FormBienvenida();
                 bienbenido.Show();
-                this.Hide();
             }
+        }
+
+        private void PrimerRegistro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //e.Cancel = true;
+            Application.Exit();
         }
     }
 }
