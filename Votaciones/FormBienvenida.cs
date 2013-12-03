@@ -36,11 +36,5 @@ namespace Votaciones
             String Codigo = txtCodigo.Text;
             Boolean acceso = acciones.IngresoCiudadano(Codigo);
         }
-
-         private void pictureBox2_Click(object sender, EventArgs e)
-         {
-               ConfirmarSalida salir = new ConfirmarSalida();
-               salir.Show();
-         }
     }
 }

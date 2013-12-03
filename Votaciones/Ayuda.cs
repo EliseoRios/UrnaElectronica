@@ -37,6 +37,8 @@ namespace Votaciones
 
         private void btnAyudar_Click(object sender, EventArgs e)
         {
+            string ruta = Application.StartupPath;
+
             //Object aIncidenci = txtIncidencias.SelectedItem;
             int NumeroInciso = txtIncidencias.SelectedIndex;
             acciones.CantidadIncidencias(NumeroInciso + 1);
@@ -44,31 +46,31 @@ namespace Votaciones
             switch (NumeroInciso)
             {
                 case 0:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\NO_ENCIENDE_SU_COMPUTADORA.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\NO_ENCIENDE_SU_COMPUTADORA.pdf"); 
                     break;
 
                 case 1:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\FALLO_AL_ABRIR_SISTEMA.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\FALLO_AL_ABRIR_SISTEMA.pdf");
                     break;
 
                 case 2:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\SERVICIO_A_LA_RED.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\SERVICIO_A_LA_RED.pdf");
                     break;
 
                 case 3:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\NO_SE_ENVIA_CORREO.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\NO_SE_ENVIA_CORREO.pdf");
                     break;
 
                 case 4:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\SE_ME_BORRO_LA_BASE_DE_DATOS.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\SE_ME_BORRO_LA_BASE_DE_DATOS.pdf");
                     break;
 
                 case 5:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\NO_ACEPTA_CONTRASEÑA.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\NO_ACEPTA_CONTRASEÑA.pdf");
                     break;
 
                 case 6:
-                    wbSolucion.Url = new Uri("C:\\Users\\Crucified Dreams\\Documents\\Incidentes\\NO_INPRIME_CODIGOS_GENERADOS.pdf");
+                    wbSolucion.Url = new Uri(ruta+"\\Incidentes\\NO_INPRIME_CODIGOS_GENERADOS.pdf");
                     break;
                 default:  MessageBox.Show("Seleccione su problema","Seleccione..");
                     break;

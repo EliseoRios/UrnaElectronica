@@ -20,21 +20,21 @@ namespace Votaciones
 
         private void registroCandidatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerCandidatos = new FormVer();
+            FormNumeros VerCandidatos = new FormNumeros();
             VerCandidatos.MostrarNombre("LISTA DE CANDIDATOS");
             VerCandidatos.Show();
         }
 
         private void partidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerPartidos = new FormVer();
+            FormNumeros VerPartidos = new FormNumeros();
             VerPartidos.MostrarNombre("LISTA DE PARTIDOS");
             VerPartidos.Show();
         }
 
         private void cargosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerCargos = new FormVer();
+            FormNumeros VerCargos = new FormNumeros();
             VerCargos.MostrarNombre("LISTA DE CARGOS");
             VerCargos.Show();
         }
@@ -48,7 +48,7 @@ namespace Votaciones
 
         private void organizadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerTodos = new FormVer();
+            FormNumeros VerTodos = new FormNumeros();
             VerTodos.MostrarNombre("TODOS LOS REGISTROS");
             VerTodos.Show();
         }

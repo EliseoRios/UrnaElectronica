@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\..\Nueva carpeta\Programas\Programacion\Compatibilidad C# con MySql\MySQLConsola\mysql\MySql.Data.dll</HintPath>
     </Reference>

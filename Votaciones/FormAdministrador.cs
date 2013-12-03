@@ -38,9 +38,9 @@ namespace Votaciones
 
         private void btnRegistros_Click(object sender, EventArgs e)
         {
-            FormVer ver = new FormVer();
-            ver.MostrarNombre("RESULTADOS LOCALES");
-            ver.Show();
+            FormNumeros numeros = new FormNumeros();
+            numeros.MostrarNombre("RESULTADOS LOCALES");
+            numeros.Show();
             this.Close();
         }
 
@@ -49,6 +49,17 @@ namespace Votaciones
             FormBienvenida bienbenida = new FormBienvenida();
             bienbenida.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConfirmarSalida salida = new ConfirmarSalida();
+            salida.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
         }
     }
 }

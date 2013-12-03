@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGenerales));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMostrar = new System.Windows.Forms.ListBox();
@@ -65,14 +66,13 @@
             this.páginaSoporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIngresoCandidatos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,10 +85,22 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1343, 644);
+            this.panel1.Size = new System.Drawing.Size(1361, 706);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1327, -2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(23, 24);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 12;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel2
             // 
@@ -97,7 +109,7 @@
             this.panel2.Controls.Add(this.txtMostrar);
             this.panel2.Location = new System.Drawing.Point(685, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(628, 575);
+            this.panel2.Size = new System.Drawing.Size(623, 640);
             this.panel2.TabIndex = 11;
             // 
             // label7
@@ -113,9 +125,9 @@
             // txtMostrar
             // 
             this.txtMostrar.FormattingEnabled = true;
-            this.txtMostrar.Location = new System.Drawing.Point(77, 67);
+            this.txtMostrar.Location = new System.Drawing.Point(63, 65);
             this.txtMostrar.Name = "txtMostrar";
-            this.txtMostrar.Size = new System.Drawing.Size(470, 459);
+            this.txtMostrar.Size = new System.Drawing.Size(505, 550);
             this.txtMostrar.TabIndex = 21;
             // 
             // panel3
@@ -137,12 +149,12 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(26, 47);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(628, 575);
+            this.panel3.Size = new System.Drawing.Size(623, 640);
             this.panel3.TabIndex = 10;
             // 
             // btnPartido
             // 
-            this.btnPartido.Location = new System.Drawing.Point(455, 532);
+            this.btnPartido.Location = new System.Drawing.Point(510, 601);
             this.btnPartido.Name = "btnPartido";
             this.btnPartido.Size = new System.Drawing.Size(90, 23);
             this.btnPartido.TabIndex = 36;
@@ -155,7 +167,7 @@
             this.txtPartidos.Location = new System.Drawing.Point(182, 257);
             this.txtPartidos.MaxLength = 45;
             this.txtPartidos.Name = "txtPartidos";
-            this.txtPartidos.Size = new System.Drawing.Size(363, 20);
+            this.txtPartidos.Size = new System.Drawing.Size(397, 20);
             this.txtPartidos.TabIndex = 35;
             // 
             // label1
@@ -173,7 +185,7 @@
             this.pbLogo.Enabled = false;
             this.pbLogo.Location = new System.Drawing.Point(173, 297);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(372, 229);
+            this.pbLogo.Size = new System.Drawing.Size(415, 298);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 33;
             this.pbLogo.TabStop = false;
@@ -211,7 +223,7 @@
             // 
             // btnFecha
             // 
-            this.btnFecha.Location = new System.Drawing.Point(455, 206);
+            this.btnFecha.Location = new System.Drawing.Point(480, 206);
             this.btnFecha.Name = "btnFecha";
             this.btnFecha.Size = new System.Drawing.Size(90, 23);
             this.btnFecha.TabIndex = 29;
@@ -224,7 +236,7 @@
             this.txtFecha.Location = new System.Drawing.Point(231, 180);
             this.txtFecha.MaxLength = 45;
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(314, 20);
+            this.txtFecha.Size = new System.Drawing.Size(348, 20);
             this.txtFecha.TabIndex = 28;
             // 
             // label3
@@ -239,7 +251,7 @@
             // 
             // btnCargo
             // 
-            this.btnCargo.Location = new System.Drawing.Point(455, 128);
+            this.btnCargo.Location = new System.Drawing.Point(480, 128);
             this.btnCargo.Name = "btnCargo";
             this.btnCargo.Size = new System.Drawing.Size(90, 23);
             this.btnCargo.TabIndex = 26;
@@ -249,10 +261,10 @@
             // 
             // txtCargos
             // 
-            this.txtCargos.Location = new System.Drawing.Point(182, 102);
+            this.txtCargos.Location = new System.Drawing.Point(191, 102);
             this.txtCargos.MaxLength = 45;
             this.txtCargos.Name = "txtCargos";
-            this.txtCargos.Size = new System.Drawing.Size(363, 20);
+            this.txtCargos.Size = new System.Drawing.Size(388, 20);
             this.txtCargos.TabIndex = 25;
             // 
             // label2
@@ -273,7 +285,7 @@
             this.menúToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1339, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1357, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -294,13 +306,13 @@
             this.ingresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.candidatosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
             // 
             // candidatosToolStripMenuItem
             // 
             this.candidatosToolStripMenuItem.Name = "candidatosToolStripMenuItem";
-            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.candidatosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.candidatosToolStripMenuItem.Text = "Candidatos";
             this.candidatosToolStripMenuItem.Click += new System.EventHandler(this.candidatosToolStripMenuItem_Click);
             // 
@@ -312,7 +324,7 @@
             this.cargosToolStripMenuItem,
             this.organizadosToolStripMenuItem});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.verToolStripMenuItem.Text = "Ver";
             // 
             // registroCandidatosToolStripMenuItem
@@ -349,7 +361,7 @@
             this.menúAdministradorToolStripMenuItem,
             this.páginaPrincipalToolStripMenuItem});
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.salirToolStripMenuItem.Text = "Ir";
             // 
             // menúAdministradorToolStripMenuItem
@@ -372,7 +384,7 @@
             this.ingresarPlanillaToolStripMenuItem,
             this.páginaSoporteToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ingresarPlanillaToolStripMenuItem
@@ -392,7 +404,7 @@
             // 
             this.btnIngresoCandidatos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoCandidatos.Image")));
             this.btnIngresoCandidatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresoCandidatos.Location = new System.Drawing.Point(611, 662);
+            this.btnIngresoCandidatos.Location = new System.Drawing.Point(608, 715);
             this.btnIngresoCandidatos.Name = "btnIngresoCandidatos";
             this.btnIngresoCandidatos.Size = new System.Drawing.Size(155, 36);
             this.btnIngresoCandidatos.TabIndex = 8;
@@ -401,28 +413,16 @@
             this.btnIngresoCandidatos.UseVisualStyleBackColor = true;
             this.btnIngresoCandidatos.Click += new System.EventHandler(this.btnIngresoCandidatos_Click);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1301, -2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(23, 24);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 12;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // FormGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1376, 710);
+            this.ClientSize = new System.Drawing.Size(1370, 763);
             this.Controls.Add(this.btnIngresoCandidatos);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormGenerales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -431,6 +431,7 @@
             this.Load += new System.EventHandler(this.FormGenerales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -439,7 +440,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }

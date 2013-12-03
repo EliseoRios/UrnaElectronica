@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO; 
+
 namespace Votaciones
 {
-    public partial class FormVer : Form
+    public partial class FormNumeros : Form
     {
         String NombreVista="";
 
-        public FormVer()
+        public FormNumeros()
         {
             InitializeComponent();
         }
@@ -23,40 +27,61 @@ namespace Votaciones
             NombreVista = Nombre;
         }
 
-        private void Ver_Load(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            lblVer.Text = this.NombreVista;
-            txtVer.Items.Add("Hola");
-            txtVer.Items.Add("Como");
-            txtVer.Items.Add("Estas");
+            FormAdministrador administrador = new FormAdministrador();
+            administrador.Show();
+            this.Close();
         }
 
-        private void registroCandidatosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void candidatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerCandidatos = new FormVer();
-            VerCandidatos.MostrarNombre("LISTA DE CANDIDATOS");
-            VerCandidatos.Show();
+            FormCandidatos candidatos = new FormCandidatos();
+            candidatos.Show();
+            this.Close();
         }
 
-        private void partidosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cargosYPartidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerPartidos = new FormVer();
-            VerPartidos.MostrarNombre("LISTA DE PARTIDOS");
-            VerPartidos.Show();
+            FormGenerales generales = new FormGenerales();
+            generales.Show();
+            this.Close();
         }
 
-        private void cargosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menúAdministradorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerCargos = new FormVer();
-            VerCargos.MostrarNombre("LISTA DE CARGOS");
-            VerCargos.Show();
+            FormAdministrador admin = new FormAdministrador();
+            admin.Show();
+            this.Close();
         }
 
-        private void organizadosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void páginaPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVer VerTodos = new FormVer();
-            VerTodos.MostrarNombre("TODOS LOS REGISTROS");
-            VerTodos.Show();
+            FormBienvenida bienvenida = new FormBienvenida();
+            bienvenida.Show();
+            this.Close();
+        }
+
+        private void páginaSoporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAyuda ayuda = new FormAyuda();
+            ayuda.Show();
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int aleatorios;
+
+            for (int i = 0; i <= int.Parse(txtCantidad.Text);i++ )
+            {
+                aleatorios = random.Next(200, 80000);
+            }
+        }
+
+        public void generarPDF()
+        {
+
         }
     }
 }
