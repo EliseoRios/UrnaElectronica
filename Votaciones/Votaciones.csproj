@@ -44,6 +44,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="system.web">
+      <HintPath>..\..\system.web.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +71,12 @@
     </Compile>
     <Compile Include="ConfirmarSalida.Designer.cs">
       <DependentUpon>ConfirmarSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorreo.Designer.cs">
+      <DependentUpon>FormCorreo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
@@ -143,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmarSalida.resx">
       <DependentUpon>ConfirmarSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCorreo.resx">
+      <DependentUpon>FormCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
