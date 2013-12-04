@@ -192,11 +192,38 @@ namespace Votaciones
         public bool IngresoCiudadano(String Codigo)
         {
             Boolean acceso = true;
-            /*this.AbrirConexion();
+            String Boleano = "";
+
+            this.AbrirConexion();
             this.Inicializar();
-            String Sql = "SELECT * FROM ciudadanos WHERE folio = "+Codigo+";";
-            this.Leer = Comando.ExecuteReader();*/
+            String Sql = "SELECT * FROM codigos WHERE codigo ='" + Codigo + "';";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            this.Leer = Comando.ExecuteReader();
+
+            while (Leer.Read())
+            {
+                Boleano = Leer["validez"].ToString();
+            }
+
+            if (Boleano != "1")
+            {
+                acceso = true;
+            }
+            else
+            {
+                acceso = false;
+            }
+
             return acceso;
+        }
+
+        public void InhabilitarCodigo(String Codigo)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "UPDATE codigos SET validez ='0' WHERE codigo='" + Codigo + "'";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            Comando.ExecuteNonQuery();
         }
 
         public void GuardadCargo(String Cargo)
@@ -289,7 +316,7 @@ namespace Votaciones
              "TRUNCATE TABLE candidatos;"
             +"TRUNCATE TABLE partidos;"
             +"TRUNCATE TABLE periodo;"
-            +"TRUNCATE TABLE votantes;"
+            //+"TRUNCATE TABLE votantes;"
             + "TRUNCATE TABLE cargos;"
             + "TRUNCATE TABLE cliente;"
             + "TRUNCATE TABLE primer_registro;"
@@ -297,6 +324,7 @@ namespace Votaciones
             +"TRUNCATE TABLE registros;"
             + "TRUNCATE TABLE codigos;"
             + "TRUNCATE TABLE veces_generadas;"
+            + "TRUNCATE TABLE pdf;"
             +"UPDATE  incidentes SET  cantidad =  '0' WHERE  id <> 0;";
 
             this.AbrirConexion();

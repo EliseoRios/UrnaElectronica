@@ -151,6 +151,7 @@
             this.txtDe.Name = "txtDe";
             this.txtDe.Size = new System.Drawing.Size(303, 20);
             this.txtDe.TabIndex = 9;
+            this.txtDe.Tag = "ejemplo@gmail.com";
             // 
             // pictureBox3
             // 

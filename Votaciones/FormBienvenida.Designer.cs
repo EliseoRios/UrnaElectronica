@@ -78,7 +78,6 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(485, 345);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.PasswordChar = '*';
             this.txtCodigo.Size = new System.Drawing.Size(401, 20);
             this.txtCodigo.TabIndex = 25;
             // 

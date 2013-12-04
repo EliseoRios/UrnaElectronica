@@ -23,26 +23,15 @@ namespace Votaciones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MailMessage msg = new MailMessage();
+            Boolean Enviado = EnviarGmail();
 
-            msg.To.Add(new MailAddress(txtPara.Text));
-            msg.From = new MailAddress(txtDe.Text);
-            msg.Subject = txtAsunto.Text;
-            msg.Body = "Mensaje de prueba enviado";
-
-            SmtpClient clienteSmtp = new SmtpClient("WIN02");
-
-            clienteSmtp.Credentials =
-            new NetworkCredential(txtDe.Text, txtContraseña.Text);
-
-            try
+            if (Enviado)
             {
-                clienteSmtp.Send(msg);
+                MessageBox.Show("Correo enviado", "Exito");
             }
-
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message,"No envió..", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
             }
         }
 
@@ -50,6 +39,40 @@ namespace Votaciones
         {
             this.Close();
             admin.Show();
+        }
+
+        private Boolean EnviarGmail()
+        {
+            Boolean Enviado = true;
+
+            MailMessage msg = new MailMessage();
+
+            msg.To.Add(new MailAddress(txtPara.Text));
+            msg.From = new MailAddress(txtDe.Text);
+            msg.Subject = txtAsunto.Text;
+            msg.Body = "Mensaje de prueba enviado";
+
+            SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com");
+            clienteSmtp.Host = "smtp.gmail.com";
+            clienteSmtp.Port = 587;
+            clienteSmtp.EnableSsl = true;
+            clienteSmtp.UseDefaultCredentials = false;
+
+            clienteSmtp.Credentials =
+            new NetworkCredential(txtDe.Text, txtContraseña.Text);
+
+            try
+            {
+                clienteSmtp.Send(msg);
+                Enviado = true;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No envió..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Enviado = false;
+            }
+            return Enviado;
         }
     }
 }
