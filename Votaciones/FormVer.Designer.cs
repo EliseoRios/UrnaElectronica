@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNumeros));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtGenerados = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.wbPDF = new System.Windows.Forms.WebBrowser();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLista = new System.Windows.Forms.ListBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -49,8 +54,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarPlanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaSoporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnVerCogigos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -61,16 +65,63 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnVerCogigos);
+            this.panel1.Controls.Add(this.txtGenerados);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.wbPDF);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.txtLista);
             this.panel1.Controls.Add(this.txtCantidad);
             this.panel1.Controls.Add(this.btnGenerar);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.menuStrip1);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1356, 749);
+            this.panel1.Size = new System.Drawing.Size(1355, 747);
             this.panel1.TabIndex = 11;
+            // 
+            // txtGenerados
+            // 
+            this.txtGenerados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtGenerados.FormattingEnabled = true;
+            this.txtGenerados.Location = new System.Drawing.Point(802, 46);
+            this.txtGenerados.Name = "txtGenerados";
+            this.txtGenerados.Size = new System.Drawing.Size(392, 21);
+            this.txtGenerados.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(691, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Números generados:";
+            // 
+            // wbPDF
+            // 
+            this.wbPDF.Location = new System.Drawing.Point(694, 74);
+            this.wbPDF.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbPDF.Name = "wbPDF";
+            this.wbPDF.Size = new System.Drawing.Size(654, 626);
+            this.wbPDF.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "¿Cuántos números desea?";
+            // 
+            // txtLista
+            // 
+            this.txtLista.FormattingEnabled = true;
+            this.txtLista.Location = new System.Drawing.Point(201, 46);
+            this.txtLista.Name = "txtLista";
+            this.txtLista.Size = new System.Drawing.Size(463, 654);
+            this.txtLista.TabIndex = 29;
             // 
             // txtCantidad
             // 
@@ -78,6 +129,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(130, 20);
             this.txtCantidad.TabIndex = 28;
+            this.txtCantidad.Tag = "";
             // 
             // btnGenerar
             // 
@@ -109,7 +161,7 @@
             this.menúToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1352, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1351, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -228,25 +280,19 @@
             this.páginaSoporteToolStripMenuItem.Text = "Página Soporte";
             this.páginaSoporteToolStripMenuItem.Click += new System.EventHandler(this.páginaSoporteToolStripMenuItem_Click);
             // 
-            // listBox1
+            // btnVerCogigos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(201, 46);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(463, 654);
-            this.listBox1.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "¿Cuántos números desea?";
+            this.btnVerCogigos.Location = new System.Drawing.Point(1229, 44);
+            this.btnVerCogigos.Name = "btnVerCogigos";
+            this.btnVerCogigos.Size = new System.Drawing.Size(75, 23);
+            this.btnVerCogigos.TabIndex = 36;
+            this.btnVerCogigos.Text = "Ver Códigos";
+            this.btnVerCogigos.UseVisualStyleBackColor = true;
+            this.btnVerCogigos.Click += new System.EventHandler(this.btnVerCogigos_Click);
             // 
             // FormNumeros
             // 
+            this.AcceptButton = this.btnGenerar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 763);
@@ -255,6 +301,7 @@
             this.Name = "FormNumeros";
             this.Text = "Generación de numeros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormNumeros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -286,7 +333,11 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox txtLista;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.WebBrowser wbPDF;
+        private System.Windows.Forms.ComboBox txtGenerados;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnVerCogigos;
     }
 }

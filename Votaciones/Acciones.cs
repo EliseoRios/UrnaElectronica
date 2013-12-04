@@ -295,13 +295,69 @@ namespace Votaciones
             + "TRUNCATE TABLE primer_registro;"
             + "TRUNCATE TABLE problemas;"
             +"TRUNCATE TABLE registros;"
+            + "TRUNCATE TABLE codigos;"
+            + "TRUNCATE TABLE veces_generadas;"
             +"UPDATE  incidentes SET  cantidad =  '0' WHERE  id <> 0;";
 
             this.AbrirConexion();
             this.Inicializar();
             this.Comando = new MySqlCommand(Sql,this.Con);
             this.Comando.ExecuteNonQuery();
+            this.CerrarConexion();
+        }
 
+        public void GuardarNumerosAleatorios(int NumeroAleatorio)
+        {
+            String booleano = "1";
+
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO codigos (codigo,validez) values ('" + NumeroAleatorio + "','" + booleano + "');";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            Comando.ExecuteNonQuery();
+            this.CerrarConexion();
+        }
+
+        public void SumarOtraGeneracionNumeros()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO veces_generadas (cantidad) VALUES ('')";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            Comando.ExecuteNonQuery();
+            this.CerrarConexion();
+        }
+
+        public string CantidadGeneracionNumeros()
+        {
+            String CantidadVeces="0";
+
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "SELECT MAX(cantidad) FROM veces_generadas;";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            CantidadVeces = Comando.ExecuteScalar().ToString();
+
+            return CantidadVeces;
+        }
+
+        public void GuardarNombrePDF(String NombrePDF)
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "INSERT INTO pdf (nombre) VALUES ('"+NombrePDF+"')";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            Comando.ExecuteNonQuery();
+            this.CerrarConexion();
+        }
+
+        public void PDFsGenerados()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "SELECT * FROM pdf;";
+            this.Comando = new MySqlCommand(Sql, this.Con);
+            this.Leer = Comando.ExecuteReader();
         }
     }
 }
