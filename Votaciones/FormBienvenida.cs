@@ -20,15 +20,9 @@ namespace Votaciones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormAdministrador forma3 = new FormAdministrador();
-            forma3.Show();
+            FormIdAdmin admin = new FormIdAdmin();
+            admin.Show();
             this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            FormAyuda ayuda = new FormAyuda();
-            ayuda.Show();
         }
 
         private void btnVotante_Click(object sender, EventArgs e)

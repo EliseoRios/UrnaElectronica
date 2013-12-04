@@ -14,6 +14,8 @@ namespace Votaciones
 {
     public partial class FormCorreo : Form
     {
+        FormAdministrador admin = new FormAdministrador();
+
         public FormCorreo()
         {
             InitializeComponent();
@@ -26,12 +28,12 @@ namespace Votaciones
             msg.To.Add(new MailAddress(txtPara.Text));
             msg.From = new MailAddress(txtDe.Text);
             msg.Subject = txtAsunto.Text;
-            msg.Body = "El contenido del mensaje";
+            msg.Body = "Mensaje de prueba enviado";
 
             SmtpClient clienteSmtp = new SmtpClient("WIN02");
 
             clienteSmtp.Credentials =
-            new NetworkCredential("usuario", "clave");
+            new NetworkCredential(txtDe.Text, txtContraseña.Text);
 
             try
             {
@@ -40,11 +42,14 @@ namespace Votaciones
 
             catch (Exception ex)
             {
-                Console.Write(ex.Message);
-                Console.ReadLine();
+                MessageBox.Show(ex.Message,"No envió..", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
-
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            admin.Show();
+        }
     }
 }

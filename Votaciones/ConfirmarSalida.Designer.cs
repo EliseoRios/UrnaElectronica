@@ -1,6 +1,6 @@
 ﻿namespace Votaciones
 {
-    partial class ConfirmarSalida
+    partial class FormIdAdmin
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -81,6 +81,7 @@
             // 
             // btnCarcel
             // 
+            this.btnCarcel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCarcel.Location = new System.Drawing.Point(238, 140);
             this.btnCarcel.Name = "btnCarcel";
             this.btnCarcel.Size = new System.Drawing.Size(75, 23);
@@ -89,11 +90,12 @@
             this.btnCarcel.UseVisualStyleBackColor = true;
             this.btnCarcel.Click += new System.EventHandler(this.btnCarcel_Click);
             // 
-            // ConfirmarSalida
+            // FormIdAdmin
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.CancelButton = this.btnCarcel;
             this.ClientSize = new System.Drawing.Size(434, 191);
             this.Controls.Add(this.btnCarcel);
@@ -102,9 +104,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.txtNombre);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "ConfirmarSalida";
-            this.Text = "Confirmar Salida";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormIdAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Confirmar administración";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,27 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCorreo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAsunto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPara = new System.Windows.Forms.TextBox();
             this.txtDe = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.txtContraseña);
+            this.panel1.Controls.Add(this.btnEnviar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtAsunto);
             this.panel1.Controls.Add(this.label2);
@@ -57,8 +64,18 @@
             this.panel1.Controls.Add(this.txtDe);
             this.panel1.Location = new System.Drawing.Point(5, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1343, 711);
+            this.panel1.Size = new System.Drawing.Size(1354, 711);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(73, 190);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(243, 24);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "INGRESE SUS DATOS ";
             // 
             // label4
             // 
@@ -69,21 +86,23 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Contraseña";
             // 
-            // textBox1
+            // txtContraseña
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 316);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtContraseña.Location = new System.Drawing.Point(73, 316);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(213, 20);
+            this.txtContraseña.TabIndex = 16;
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
-            // button1
+            // btnEnviar
             // 
-            this.button1.Location = new System.Drawing.Point(73, 494);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Enviar resultados";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnviar.Location = new System.Drawing.Point(73, 494);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(75, 23);
+            this.btnEnviar.TabIndex = 15;
+            this.btnEnviar.Text = "Enviar resultados";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -133,18 +152,31 @@
             this.txtDe.Size = new System.Drawing.Size(303, 20);
             this.txtDe.TabIndex = 9;
             // 
-            // label5
+            // pictureBox3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(73, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(243, 24);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "INGRESE SUS DATOS ";
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.GrayText;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox3.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1356, 36);
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1312, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(23, 24);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 28;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FormCorreo
             // 
+            this.AcceptButton = this.btnEnviar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 725);
@@ -152,8 +184,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCorreo";
             this.Text = "Enviar Resultados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,8 +197,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAsunto;
         private System.Windows.Forms.Label label2;
@@ -171,6 +206,8 @@
         private System.Windows.Forms.TextBox txtPara;
         private System.Windows.Forms.TextBox txtDe;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnCerrar;
 
     }
 }

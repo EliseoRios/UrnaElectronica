@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Votaciones
 {
-    public partial class ConfirmarSalida : Form
+    public partial class FormIdAdmin : Form
     {
-        public ConfirmarSalida()
+        public FormIdAdmin()
         {
             InitializeComponent();
         }
@@ -30,7 +30,9 @@ namespace Votaciones
 
             if (ValidarEntrada == true)
             {
-                Application.Exit();
+                FormAdministrador admin = new FormAdministrador();
+                admin.Show();
+                this.Close();
             }
             else
             {
@@ -41,6 +43,8 @@ namespace Votaciones
 
         private void btnCarcel_Click(object sender, EventArgs e)
         {
+            FormBienvenida bienbenida = new FormBienvenida();
+            bienbenida.Show();
             this.Close();
         }
         //WindowState = FormWindowState.Minimized;

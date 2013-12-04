@@ -53,13 +53,30 @@ namespace Votaciones
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ConfirmarSalida salida = new ConfirmarSalida();
-            salida.Show();
+            DialogResult salir =  MessageBox.Show("Seguro desea salir?","Saliendo..",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+
+            if (salir == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             button1_Click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormCorreo correo = new FormCorreo();
+            correo.Show();
+            this.Close();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            FormAyuda ayuda = new FormAyuda();
+            ayuda.Show();
         }
     }
 }
