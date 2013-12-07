@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Diagnostics; //executar programa
+
 namespace Votaciones
 {
     public partial class FormAdministrador : Form
@@ -77,6 +79,27 @@ namespace Votaciones
         {
             FormAyuda ayuda = new FormAyuda();
             ayuda.Show();
+        }
+
+        private void btnApache_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String homeDirectory = Application.StartupPath;
+
+                Process apache = new Process();
+                apache.StartInfo.WorkingDirectory = homeDirectory + "\\instalador_apache";
+                apache.StartInfo.FileName = "apache.msi";
+                apache.StartInfo.Arguments = "Ejecutando apache..";
+                apache.Start();
+                apache.WaitForExit();
+                apache.Close();
+                apache.Dispose();
+            }
+            catch
+            {
+                MessageBox.Show("Si no lo instala no podrán votar", "No instaló..", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

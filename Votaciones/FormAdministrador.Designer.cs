@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministrador));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnApache = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnApache);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -62,12 +64,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ADMINISTRADOR DE TAREAS";
             // 
+            // btnApache
+            // 
+            this.btnApache.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApache.Image = ((System.Drawing.Image)(resources.GetObject("btnApache.Image")));
+            this.btnApache.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApache.Location = new System.Drawing.Point(122, 281);
+            this.btnApache.Name = "btnApache";
+            this.btnApache.Size = new System.Drawing.Size(673, 60);
+            this.btnApache.TabIndex = 16;
+            this.btnApache.Text = "INSTALAR APACHE";
+            this.btnApache.UseVisualStyleBackColor = true;
+            this.btnApache.Click += new System.EventHandler(this.btnApache_Click);
+            // 
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.Location = new System.Drawing.Point(122, 277);
+            this.button3.Location = new System.Drawing.Point(122, 201);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(673, 60);
             this.button3.TabIndex = 15;
@@ -79,7 +94,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(393, 530);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 49);
+            this.button2.Size = new System.Drawing.Size(130, 48);
             this.button2.TabIndex = 14;
             this.button2.Text = "Cerrar Aplicación";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,7 +106,7 @@
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(122, 408);
+            this.btnEliminar.Location = new System.Drawing.Point(122, 400);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(673, 60);
             this.btnEliminar.TabIndex = 14;
@@ -105,7 +120,7 @@
             this.btnRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistros.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistros.Image")));
             this.btnRegistros.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnRegistros.Location = new System.Drawing.Point(122, 156);
+            this.btnRegistros.Location = new System.Drawing.Point(122, 121);
             this.btnRegistros.Name = "btnRegistros";
             this.btnRegistros.Size = new System.Drawing.Size(673, 60);
             this.btnRegistros.TabIndex = 13;
@@ -205,5 +220,6 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnApache;
     }
 }

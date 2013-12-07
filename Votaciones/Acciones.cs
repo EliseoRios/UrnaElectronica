@@ -191,7 +191,7 @@ namespace Votaciones
 
         public bool IngresoCiudadano(String Codigo)
         {
-            Boolean acceso = true;
+            Boolean acceso;
             String Boleano = "";
 
             this.AbrirConexion();
@@ -205,7 +205,9 @@ namespace Votaciones
                 Boleano = Leer["validez"].ToString();
             }
 
-            if (Boleano != "1")
+            MessageBox.Show(Boleano,"numero");
+
+            if (Boleano == "True")
             {
                 acceso = true;
             }
