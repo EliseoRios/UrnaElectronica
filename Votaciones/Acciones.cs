@@ -205,8 +205,6 @@ namespace Votaciones
                 Boleano = Leer["validez"].ToString();
             }
 
-            MessageBox.Show(Boleano,"numero");
-
             if (Boleano == "True")
             {
                 acceso = true;

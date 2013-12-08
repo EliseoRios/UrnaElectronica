@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNumeros));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVerCogigos = new System.Windows.Forms.Button();
             this.txtGenerados = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.wbPDF = new System.Windows.Forms.WebBrowser();
@@ -43,18 +44,12 @@
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.candidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargosYPartidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroCandidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.partidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.organizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menúAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarPlanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaSoporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVerCogigos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -79,6 +74,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1355, 747);
             this.panel1.TabIndex = 11;
+            // 
+            // btnVerCogigos
+            // 
+            this.btnVerCogigos.Location = new System.Drawing.Point(1229, 44);
+            this.btnVerCogigos.Name = "btnVerCogigos";
+            this.btnVerCogigos.Size = new System.Drawing.Size(75, 23);
+            this.btnVerCogigos.TabIndex = 36;
+            this.btnVerCogigos.Text = "Ver Códigos";
+            this.btnVerCogigos.UseVisualStyleBackColor = true;
+            this.btnVerCogigos.Click += new System.EventHandler(this.btnVerCogigos_Click);
             // 
             // txtGenerados
             // 
@@ -169,7 +174,6 @@
             // 
             this.menúToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresarToolStripMenuItem,
-            this.verToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menúToolStripMenuItem.Name = "menúToolStripMenuItem";
@@ -183,7 +187,7 @@
             this.candidatosToolStripMenuItem,
             this.cargosYPartidosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
             // 
             // candidatosToolStripMenuItem
@@ -200,48 +204,13 @@
             this.cargosYPartidosToolStripMenuItem.Text = "Cargos y partidos";
             this.cargosYPartidosToolStripMenuItem.Click += new System.EventHandler(this.cargosYPartidosToolStripMenuItem_Click);
             // 
-            // verToolStripMenuItem
-            // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroCandidatosToolStripMenuItem,
-            this.partidosToolStripMenuItem,
-            this.cargosToolStripMenuItem,
-            this.organizadosToolStripMenuItem});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.verToolStripMenuItem.Text = "Ver";
-            // 
-            // registroCandidatosToolStripMenuItem
-            // 
-            this.registroCandidatosToolStripMenuItem.Name = "registroCandidatosToolStripMenuItem";
-            this.registroCandidatosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.registroCandidatosToolStripMenuItem.Text = "Candidatos";
-            // 
-            // partidosToolStripMenuItem
-            // 
-            this.partidosToolStripMenuItem.Name = "partidosToolStripMenuItem";
-            this.partidosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.partidosToolStripMenuItem.Text = "Partidos";
-            // 
-            // cargosToolStripMenuItem
-            // 
-            this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
-            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.cargosToolStripMenuItem.Text = "Cargos";
-            // 
-            // organizadosToolStripMenuItem
-            // 
-            this.organizadosToolStripMenuItem.Name = "organizadosToolStripMenuItem";
-            this.organizadosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.organizadosToolStripMenuItem.Text = "Todos";
-            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menúAdministradorToolStripMenuItem,
             this.páginaPrincipalToolStripMenuItem});
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Ir";
             // 
             // menúAdministradorToolStripMenuItem
@@ -264,7 +233,7 @@
             this.ingresarPlanillaToolStripMenuItem,
             this.páginaSoporteToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ingresarPlanillaToolStripMenuItem
@@ -279,16 +248,6 @@
             this.páginaSoporteToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.páginaSoporteToolStripMenuItem.Text = "Página Soporte";
             this.páginaSoporteToolStripMenuItem.Click += new System.EventHandler(this.páginaSoporteToolStripMenuItem_Click);
-            // 
-            // btnVerCogigos
-            // 
-            this.btnVerCogigos.Location = new System.Drawing.Point(1229, 44);
-            this.btnVerCogigos.Name = "btnVerCogigos";
-            this.btnVerCogigos.Size = new System.Drawing.Size(75, 23);
-            this.btnVerCogigos.TabIndex = 36;
-            this.btnVerCogigos.Text = "Ver Códigos";
-            this.btnVerCogigos.UseVisualStyleBackColor = true;
-            this.btnVerCogigos.Click += new System.EventHandler(this.btnVerCogigos_Click);
             // 
             // FormNumeros
             // 
@@ -319,11 +278,6 @@
         private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem candidatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargosYPartidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroCandidatosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem partidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem organizadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarPlanillaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem páginaSoporteToolStripMenuItem;

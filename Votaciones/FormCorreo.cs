@@ -28,7 +28,15 @@ namespace Votaciones
 
             if (Enviado)
             {
-                MessageBox.Show("Correo enviado", "Exito");
+               DialogResult Enviados = MessageBox.Show("Correo enviado", "Exito");
+                if (Enviados == DialogResult.OK)
+                {
+                    FormAdministrador admin = new FormAdministrador();
+                    admin.Show();
+                    this.Dispose();
+                    this.Close();
+                }
+
             }
             else
             {
@@ -51,7 +59,7 @@ namespace Votaciones
             msg.To.Add(new MailAddress(txtPara.Text));
             msg.From = new MailAddress(txtDe.Text);
             msg.Subject = txtAsunto.Text;
-            msg.Body = "Mensaje de prueba enviado";
+            msg.Body = txtVotos.Text;
 
             SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com");
             clienteSmtp.Host = "smtp.gmail.com";
@@ -81,22 +89,29 @@ namespace Votaciones
             AccionesVotocs AccionesVoto = new AccionesVotocs();
             AccionesVoto.ContarVotos();
 
-            while(AccionesVoto.Leer.Read())
+            if (AccionesVoto.resultado.IsCompleted)
             {
-                for (int i = 0; i < AccionesVoto.Leer.FieldCount; i++)
+                MessageBox.Show("Los resultados se han copletado", "Cargando..");
+            }
+            else
+            {
+                MessageBox.Show("Espere la carga de resultados..", "Cargando..");
+                AccionesVoto.Leer = AccionesVoto.Commando.EndExecuteReader(AccionesVoto.resultado);
+
+                try
                 {
-                  String linea = AccionesVoto.Leer.GetValue(i).ToString();
-                  txtVotos.AppendText(linea);
+                    txtVotos.AppendText("Nombre\t\tCargo\t\t\tPartido\t\tVotos\n");
+
+                    while (AccionesVoto.Leer.Read())
+                    {
+                        txtVotos.AppendText(AccionesVoto.Leer.GetString(0) + "\t\t" + AccionesVoto.Leer.GetString(1) + "\t\t" + AccionesVoto.Leer.GetString(2) + "\t\t" + AccionesVoto.Leer.GetInt32(3)+"\n");
+                    }
+                }
+                finally
+                {
+                   // AccionesVoto.Commando.Dispose();
                 }
             }
-            /*int count = 0;
-            while (!AccionesVoto.resultado.IsCompleted)
-            {
-                count += 1;
-                txtVotos.AppendText("Waiting ("+count+")");
-                
-                System.Threading.Thread.Sleep(100);
-            }*/
         }
     }
 }

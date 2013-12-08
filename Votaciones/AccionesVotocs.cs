@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 
+using System.Windows.Forms;
+
 namespace Votaciones
 {
     class AccionesVotocs : Conexion
     {
+        public MySqlCommand Commando;
         public MySqlDataReader Leer;
         public IAsyncResult resultado;
 
@@ -21,7 +24,7 @@ namespace Votaciones
             this.Comando = new MySqlCommand(Sql, this.Con);
             String Cuanto = Comando.ExecuteScalar().ToString();
             Cuantos = int.Parse(Cuanto);
-            
+
             return Cuantos;
         }
 
@@ -43,7 +46,7 @@ namespace Votaciones
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "SELECT * FROM candidatos where Id ='"+id+"' and Cargo ='"+NombreCargo+"';";
+            String Sql = "SELECT * FROM candidatos where Id ='" + id + "' and Cargo ='" + NombreCargo + "';";
             this.Comando = new MySqlCommand(Sql, this.Con);
             this.Leer = Comando.ExecuteReader();
         }
@@ -52,7 +55,7 @@ namespace Votaciones
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "SELECT * FROM cargos where id='"+id+"';";
+            String Sql = "SELECT * FROM cargos where id='" + id + "';";
             this.Comando = new MySqlCommand(Sql, this.Con);
             this.Leer = Comando.ExecuteReader();
         }
@@ -75,11 +78,11 @@ namespace Votaciones
             this.Leer = Comando.ExecuteReader();
         }
 
-        public void RegistarVoto(String nombre,String cargo,String partido)
+        public void RegistarVoto(String nombre, String cargo, String partido)
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "INSERT INTO registros (nombre,cargo,partido) VALUES ('"+nombre+"','"+cargo+"','"+partido+"');";
+            String Sql = "INSERT INTO registros (nombre,cargo,partido) VALUES ('" + nombre + "','" + cargo + "','" + partido + "');";
             this.Comando = new MySqlCommand(Sql, this.Con);
             Comando.ExecuteNonQuery();
         }
@@ -94,37 +97,11 @@ namespace Votaciones
         {
             this.AbrirConexion();
             this.Inicializar();
-            String Sql = "SELECT nombre AS Nombre, COUNT( nombre ) AS Cantidad_VOTOS, cargo AS Cargo, partido AS Partido"
-                       + "FROM registros WHERE nombre is not null"
-                       + "GROUP BY cargo;";
-            this.Comando = new MySqlCommand(Sql,this.Con);
-            resultado = Comando.BeginExecuteReader();
-            Leer = Comando.EndExecuteReader(resultado);
-
-            /*int count = 0;
-            while (!resultado.IsCompleted)
-            {
-                count += 1;
-                Console.WriteLine("Waiting ({0})", count);
-                // Wait for 1/10 second, so the counter 
-                // does not consume all available resources  
-                // on the main thread.
-                System.Threading.Thread.Sleep(100);
-            }
-            
-            DisplayResults(Leer);*/
-        }
-
-        private static void DisplayResults(MySqlDataReader leer)
-        {
-            // Display the data within the reader. 
-            while (leer.Read())
-            {
-                // Display all the columns.  
-                for (int i = 0; i < leer.FieldCount; i++)
-                    Console.Write("{0} ", leer.GetValue(i));
-                Console.WriteLine();
-            }
+            String Sql = "SELECT nombre AS Nombre, cargo AS Cargo, partido AS Partido, COUNT( nombre ) AS Cantidad_VOTOS"
+                       + " FROM registros WHERE nombre is not null"
+                       + " GROUP BY cargo;";
+            Commando = new MySqlCommand(Sql, this.Con);
+            resultado = Commando.BeginExecuteReader();
         }
     }
 }
