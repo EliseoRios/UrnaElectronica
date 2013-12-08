@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acciones.cs" />
+    <Compile Include="AccionesVotocs.cs" />
     <Compile Include="Ayuda.cs">
       <SubType>Form</SubType>
     </Compile>

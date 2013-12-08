@@ -96,6 +96,10 @@ namespace Votaciones
 
         private void CargarDatosGenerales()
         {
+            txtCargo.Items.Clear();
+            txtPartido.Items.Clear();
+            txtPeriodo.Items.Clear();
+
             acciones.RegistrosGeneralesCargos();
 
             while (acciones.Leer.Read())

@@ -27,8 +27,9 @@ namespace Votaciones
 
         private void btnVotante_Click(object sender, EventArgs e)
         {
-            PlanillaVotacion p = new PlanillaVotacion();
-            p.Show();
+            PlanillaVotacion planilla = new PlanillaVotacion();
+            planilla.Show();
+            this.Close();
             /*String Codigo = txtCodigo.Text;
             Boolean acceso = acciones.IngresoCiudadano(Codigo);
 
@@ -43,6 +44,11 @@ namespace Votaciones
             {
                 MessageBox.Show("Código no valido","Error..",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }*/
+        }
+
+        private void FormBienvenida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
