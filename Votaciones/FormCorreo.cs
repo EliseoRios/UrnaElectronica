@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 using System.Net;
 using System.Net.Mail;
@@ -31,7 +32,7 @@ namespace Votaciones
             }
             else
             {
-
+                MessageBox.Show("Error al enviar", "Falló..");
             }
         }
 
@@ -73,6 +74,29 @@ namespace Votaciones
                 Enviado = false;
             }
             return Enviado;
+        }
+
+        private void FormCorreo_Load(object sender, EventArgs e)
+        {
+            AccionesVotocs AccionesVoto = new AccionesVotocs();
+            AccionesVoto.ContarVotos();
+
+            while(AccionesVoto.Leer.Read())
+            {
+                for (int i = 0; i < AccionesVoto.Leer.FieldCount; i++)
+                {
+                  String linea = AccionesVoto.Leer.GetValue(i).ToString();
+                  txtVotos.AppendText(linea);
+                }
+            }
+            /*int count = 0;
+            while (!AccionesVoto.resultado.IsCompleted)
+            {
+                count += 1;
+                txtVotos.AppendText("Waiting ("+count+")");
+                
+                System.Threading.Thread.Sleep(100);
+            }*/
         }
     }
 }

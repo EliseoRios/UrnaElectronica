@@ -51,11 +51,6 @@
             this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargosYPartidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroCandidatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.partidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.organizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menúAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.páginaPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -280,7 +275,6 @@
             // 
             this.menúToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresarToolStripMenuItem,
-            this.verToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menúToolStripMenuItem.Name = "menúToolStripMenuItem";
@@ -293,7 +287,7 @@
             this.ingresarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cargosYPartidosToolStripMenuItem});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
             // 
             // cargosYPartidosToolStripMenuItem
@@ -303,52 +297,13 @@
             this.cargosYPartidosToolStripMenuItem.Text = "Generales";
             this.cargosYPartidosToolStripMenuItem.Click += new System.EventHandler(this.cargosYPartidosToolStripMenuItem_Click);
             // 
-            // verToolStripMenuItem
-            // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroCandidatosToolStripMenuItem,
-            this.partidosToolStripMenuItem,
-            this.cargosToolStripMenuItem,
-            this.organizadosToolStripMenuItem});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.verToolStripMenuItem.Text = "Ver";
-            // 
-            // registroCandidatosToolStripMenuItem
-            // 
-            this.registroCandidatosToolStripMenuItem.Name = "registroCandidatosToolStripMenuItem";
-            this.registroCandidatosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.registroCandidatosToolStripMenuItem.Text = "Candidatos";
-            this.registroCandidatosToolStripMenuItem.Click += new System.EventHandler(this.registroCandidatosToolStripMenuItem_Click);
-            // 
-            // partidosToolStripMenuItem
-            // 
-            this.partidosToolStripMenuItem.Name = "partidosToolStripMenuItem";
-            this.partidosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.partidosToolStripMenuItem.Text = "Partidos";
-            this.partidosToolStripMenuItem.Click += new System.EventHandler(this.partidosToolStripMenuItem_Click);
-            // 
-            // cargosToolStripMenuItem
-            // 
-            this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
-            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.cargosToolStripMenuItem.Text = "Cargos";
-            this.cargosToolStripMenuItem.Click += new System.EventHandler(this.cargosToolStripMenuItem_Click);
-            // 
-            // organizadosToolStripMenuItem
-            // 
-            this.organizadosToolStripMenuItem.Name = "organizadosToolStripMenuItem";
-            this.organizadosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.organizadosToolStripMenuItem.Text = "Todos";
-            this.organizadosToolStripMenuItem.Click += new System.EventHandler(this.organizadosToolStripMenuItem_Click);
-            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menúAdministradorToolStripMenuItem,
             this.páginaPrincipalToolStripMenuItem});
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Ir";
             // 
             // menúAdministradorToolStripMenuItem
@@ -371,7 +326,7 @@
             this.ingresarPlanillaToolStripMenuItem,
             this.páginaSoporteToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // ingresarPlanillaToolStripMenuItem
@@ -419,11 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem menúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargosYPartidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroCandidatosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem partidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem organizadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarPlanillaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem páginaSoporteToolStripMenuItem;

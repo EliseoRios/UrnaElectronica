@@ -63,7 +63,7 @@ namespace Votaciones
 
                     if (Nombre != "")
                     {
-                        this.LlenarPlanilla(ContadorSwitch, Nombre, DireccionImagen,Partido);
+                        this.LlenarPlanilla(ContadorSwitch, Nombre, DireccionImagen, Partido);
                         ContadorSwitch++;
                     }
                 }
@@ -80,7 +80,6 @@ namespace Votaciones
                 }
             }
         }
-
 
         String CandidatoSeleccionado;
         private void btnVotar_Click_1(object sender, EventArgs e)

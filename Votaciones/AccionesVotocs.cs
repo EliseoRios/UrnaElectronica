@@ -9,6 +9,7 @@ namespace Votaciones
     class AccionesVotocs : Conexion
     {
         public MySqlDataReader Leer;
+        public IAsyncResult resultado;
 
         public int CantidadCargos()
         {
@@ -87,6 +88,43 @@ namespace Votaciones
         {
             this.Comando = null;
             this.Leer = null;
+        }
+
+        public void ContarVotos()
+        {
+            this.AbrirConexion();
+            this.Inicializar();
+            String Sql = "SELECT nombre AS Nombre, COUNT( nombre ) AS Cantidad_VOTOS, cargo AS Cargo, partido AS Partido"
+                       + "FROM registros WHERE nombre is not null"
+                       + "GROUP BY cargo;";
+            this.Comando = new MySqlCommand(Sql,this.Con);
+            resultado = Comando.BeginExecuteReader();
+            Leer = Comando.EndExecuteReader(resultado);
+
+            /*int count = 0;
+            while (!resultado.IsCompleted)
+            {
+                count += 1;
+                Console.WriteLine("Waiting ({0})", count);
+                // Wait for 1/10 second, so the counter 
+                // does not consume all available resources  
+                // on the main thread.
+                System.Threading.Thread.Sleep(100);
+            }
+            
+            DisplayResults(Leer);*/
+        }
+
+        private static void DisplayResults(MySqlDataReader leer)
+        {
+            // Display the data within the reader. 
+            while (leer.Read())
+            {
+                // Display all the columns.  
+                for (int i = 0; i < leer.FieldCount; i++)
+                    Console.Write("{0} ", leer.GetValue(i));
+                Console.WriteLine();
+            }
         }
     }
 }
